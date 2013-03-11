@@ -15,10 +15,10 @@
 // ========================================================================
 
 using System;
-using Declarations;
-using Declarations.Events;
-using Declarations.Media;
-using Declarations.Players;
+using nVLC;
+using nVLC.Events;
+using nVLC.Media;
+using nVLC.Players;
 using nVLC.Events;
 using LibVlcWrapper;
 

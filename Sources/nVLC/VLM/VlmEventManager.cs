@@ -5,9 +5,9 @@ using System.Text;
 using LibVlcWrapper;
 using nVLC.Exceptions;
 using nVLC.Events;
-using Declarations.Events;
+using nVLC.Events;
 using System.Runtime.InteropServices;
-using Declarations.VLM;
+using nVLC.VLM;
 
 namespace nVLC
 {

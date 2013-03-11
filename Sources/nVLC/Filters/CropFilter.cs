@@ -16,7 +16,7 @@
 
 using System;
 using System.Drawing;
-using Declarations.Filters;
+using nVLC.Filters;
 using LibVlcWrapper;
 
 namespace nVLC.Filters

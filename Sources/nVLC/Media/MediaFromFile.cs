@@ -16,8 +16,8 @@
 
 using System;
 using System.Runtime.InteropServices;
-using Declarations;
-using Declarations.Media;
+using nVLC;
+using nVLC.Media;
 using LibVlcWrapper;
 
 namespace nVLC.Media

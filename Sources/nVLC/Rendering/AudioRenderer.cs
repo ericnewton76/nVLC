@@ -18,8 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using Declarations;
-using Declarations.Enums;
+using nVLC;
+using nVLC.Enums;
 using LibVlcWrapper;
 
 namespace nVLC

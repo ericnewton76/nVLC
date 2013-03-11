@@ -17,9 +17,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using Declarations;
-using Declarations.Events;
-using Declarations.Media;
+using nVLC;
+using nVLC.Events;
+using nVLC.Media;
 using nVLC.Events;
 using LibVlcWrapper;
 

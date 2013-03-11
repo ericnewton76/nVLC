@@ -17,9 +17,9 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Declarations;
-using Declarations.Filters;
-using Declarations.Players;
+using nVLC;
+using nVLC.Filters;
+using nVLC.Players;
 using nVLC.Filters;
 using nVLC.Utils;
 using LibVlcWrapper;

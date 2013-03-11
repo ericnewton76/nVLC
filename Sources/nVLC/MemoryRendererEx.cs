@@ -18,11 +18,11 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using Declarations;
-using Implementation.Utils;
+using nVLC;
+using nVLC.Utils;
 using LibVlcWrapper;
 
-namespace Implementation
+namespace nVLC
 {
     internal sealed unsafe class MemoryRendererEx : DisposableBase, IMemoryRendererEx
     {

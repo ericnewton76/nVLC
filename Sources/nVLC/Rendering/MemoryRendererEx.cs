@@ -18,7 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using Declarations;
+using nVLC;
 using nVLC.Utils;
 using LibVlcWrapper;
 

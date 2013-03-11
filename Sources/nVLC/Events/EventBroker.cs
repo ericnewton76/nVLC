@@ -16,7 +16,7 @@
 
 using System;
 using System.Runtime.InteropServices;
-using Declarations.Events;
+using nVLC.Events;
 using nVLC.Media;
 using LibVlcWrapper;
 

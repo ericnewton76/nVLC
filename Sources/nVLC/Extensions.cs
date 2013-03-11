@@ -16,7 +16,7 @@
 
 using System.Drawing;
 using System.Text;
-using Declarations;
+using nVLC;
 using LibVlcWrapper;
 using System;
 using nVLC.Utils;

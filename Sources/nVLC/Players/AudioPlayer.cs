@@ -15,10 +15,10 @@
 // ========================================================================
 
 using System;
-using Declarations;
-using Declarations.Players;
+using nVLC;
+using nVLC.Players;
 using LibVlcWrapper;
-using Declarations.Enums;
+using nVLC.Enums;
 using nVLC.Exceptions;
 
 namespace nVLC.Players

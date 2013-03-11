@@ -16,11 +16,11 @@
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Declarations;
-using Declarations.Events;
-using Declarations.Media;
-using Declarations.Players;
-using Implementation;
+using nVLC;
+using nVLC.Events;
+using nVLC.Media;
+using nVLC.Players;
+using nVLC;
 
 namespace nVLC_Demo_WinForms
 {

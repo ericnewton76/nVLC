@@ -18,10 +18,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Declarations;
+using nVLC;
 using LibVlcWrapper;
-using Declarations.Players;
-using Declarations.Enums;
+using nVLC.Players;
+using nVLC.Enums;
 
 namespace nVLC.Players
 {

@@ -15,8 +15,8 @@
 // ========================================================================
 
 using System;
-using Declarations;
-using Declarations.Filters;
+using nVLC;
+using nVLC.Filters;
 using LibVlcWrapper;
 
 namespace nVLC.Filters

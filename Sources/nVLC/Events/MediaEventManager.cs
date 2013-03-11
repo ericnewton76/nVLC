@@ -15,8 +15,8 @@
 // ========================================================================
 
 using System;
-using Declarations;
-using Declarations.Events;
+using nVLC;
+using nVLC.Events;
 using nVLC.Media;
 using LibVlcWrapper;
 

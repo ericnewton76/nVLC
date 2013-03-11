@@ -20,7 +20,7 @@ using System.Linq;
 using System.Text;
 using LibVlcWrapper;
 using System.Runtime.InteropServices;
-using Declarations;
+using nVLC;
 using System.Diagnostics;
 
 namespace nVLC.Loggers
