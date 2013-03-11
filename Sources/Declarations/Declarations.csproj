@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{819C4BAB-8FD0-463F-BB5F-119731840390}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Declarations</RootNamespace>
+    <AssemblyName>Declarations</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <DocumentationFile>bin\x86\Debug\Declarations.XML</DocumentationFile>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Structures\AudioOutputDeviceInfo.cs" />
+    <Compile Include="Delegates.cs" />
+    <Compile Include="Discovery\IMediaDiscoverer.cs" />
+    <Compile Include="Enums\AspectRatioMode.cs" />
+    <Compile Include="Enums\AudioChannelType.cs" />
+    <Compile Include="Enums\AudioOutputDeviceType.cs" />
+    <Compile Include="Enums\Category.cs" />
+    <Compile Include="Enums\ChromaType.cs" />
+    <Compile Include="Enums\NavigationMode.cs" />
+    <Compile Include="Enums\SoundType.cs" />
+    <Compile Include="Enums\TrackType.cs" />
+    <Compile Include="Enums\DeinterlaceMode.cs" />
+    <Compile Include="Enums\VideoCodecs.cs" />
+    <Compile Include="Events\EventTypes.cs" />
+    <Compile Include="Events\IMediaDiscoveryEvents.cs" />
+    <Compile Include="Events\IMediaListEvents.cs" />
+    <Compile Include="Events\IMediaListPlayerEvents.cs" />
+    <Compile Include="Events\MediaListEvents.cs" />
+    <Compile Include="Structures\FilterInfo.cs" />
+    <Compile Include="Filters\IAdjustFilter.cs" />
+    <Compile Include="Structures\FrameData.cs" />
+    <Compile Include="Rendering\IRenderer.cs" />
+    <Compile Include="Structures\StreamInfo.cs" />
+    <Compile Include="Rendering\IMemoryRendererEx.cs" />
+    <Compile Include="MediaLibrary\IMediaLibrary.cs" />
+    <Compile Include="Structures\MediaStatistics.cs" />
+    <Compile Include="Media\IMediaFromFile.cs" />
+    <Compile Include="Structures\MediaTrackInfo.cs" />
+    <Compile Include="Media\IMemoryInputMedia.cs" />
+    <Compile Include="Structures\PlanarFrame.cs" />
+    <Compile Include="Players\IAudioPlayer.cs" />
+    <Compile Include="Filters\ICropFilter.cs" />
+    <Compile Include="Filters\IDeinterlaceFilter.cs" />
+    <Compile Include="Rendering\IAudioRenderer.cs" />
+    <Compile Include="Players\IDiskPlayer.cs" />
+    <Compile Include="Events\IEventBroker.cs" />
+    <Compile Include="Events\IEventProvider.cs" />
+    <Compile Include="Internal\ILogger.cs" />
+    <Compile Include="Structures\BitmapFormat.cs" />
+    <Compile Include="Filters\ILogoFilter.cs" />
+    <Compile Include="Filters\IMarqueeFilter.cs" />
+    <Compile Include="Media\IMedia.cs" />
+    <Compile Include="Events\IMediaEvents.cs" />
+    <Compile Include="Media\IMediaList.cs" />
+    <Compile Include="Players\IMediaListPlayer.cs" />
+    <Compile Include="IMediaPlayerFactory.cs" />
+    <Compile Include="Rendering\IMemoryRenderer.cs" />
+    <Compile Include="Internal\INativePointer.cs" />
+    <Compile Include="Players\IPlayer.cs" />
+    <Compile Include="Internal\IReferenceCount.cs" />
+    <Compile Include="Media\IScreenCaptureMedia.cs" />
+    <Compile Include="Media\IVideoInputMedia.cs" />
+    <Compile Include="Players\IVideoPlayer.cs" />
+    <Compile Include="Enums\MediaState.cs" />
+    <Compile Include="MediaStrings.cs" />
+    <Compile Include="Enums\MetaDataType.cs" />
+    <Compile Include="Enums\PlaybackMode.cs" />
+    <Compile Include="Enums\Position.cs" />
+    <Compile Include="Structures\SoundFormat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Enums\VlcColor.cs" />
+    <Compile Include="Structures\Sound.cs" />
+    <Compile Include="VLM\IVideoLanManager.cs" />
+    <Compile Include="VLM\IVlmEventManager.cs" />
+    <Compile Include="VLM\VlmEvent.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

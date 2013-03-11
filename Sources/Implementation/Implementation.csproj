@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6BA02CCA-2E14-4A64-8AB6-594E600D80C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Implementation</RootNamespace>
+    <AssemblyName>Implementation</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>bin\x86\Debug\Implementation.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="NLog, Version=1.0.0.505, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rd party\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Discovery\MediaDiscoverer.cs" />
+    <Compile Include="Events\EventManager.cs" />
+    <Compile Include="Events\MediaDiscoveryEventManager.cs" />
+    <Compile Include="Filters\AdjustFilter.cs" />
+    <Compile Include="Loggers\LogSubscriber.cs" />
+    <Compile Include="MediaLibrary\MediaLibrary.cs" />
+    <Compile Include="Media\MediaFromFile.cs" />
+    <Compile Include="Rendering\MemoryRendererEx.cs" />
+    <Compile Include="Structures\PlanarPixelData.cs" />
+    <Compile Include="Players\AudioPlayer.cs" />
+    <Compile Include="Rendering\AudioRenderer.cs" />
+    <Compile Include="Players\BasicPlayer.cs" />
+    <Compile Include="Filters\CropFilter.cs" />
+    <Compile Include="Filters\DeinterlaceFilter.cs" />
+    <Compile Include="Delagates.cs" />
+    <Compile Include="Players\DiskPlayer.cs" />
+    <Compile Include="DisposableBase.cs" />
+    <Compile Include="Events\EventBroker.cs" />
+    <Compile Include="Events\MediaEventManager.cs" />
+    <Compile Include="Events\MediaListEventManager.cs" />
+    <Compile Include="Events\MediaListPlayerEventManager.cs" />
+    <Compile Include="Exceptions\LibVlcInitException.cs" />
+    <Compile Include="Exceptions\LibVlcNotFoundException.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Exceptions\LibVlcException.cs" />
+    <Compile Include="Loggers\Log.cs" />
+    <Compile Include="Filters\LogoFilter.cs" />
+    <Compile Include="Filters\MarqueeFilter.cs" />
+    <Compile Include="Media\Media.cs" />
+    <Compile Include="Media\MediaList.cs" />
+    <Compile Include="Players\MediaListPlayer.cs" />
+    <Compile Include="MediaPlayerFactory.cs" />
+    <Compile Include="Media\ScreenCaptureMedia.cs" />
+    <Compile Include="Rendering\MemoryRenderer.cs" />
+    <Compile Include="Loggers\NLogger.cs" />
+    <Compile Include="Structures\PixelData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReferenceCountAction.cs" />
+    <Compile Include="Media\MemoryInputMedia.cs" />
+    <Compile Include="Utils\EnumUtils.cs" />
+    <Compile Include="Utils\MemoryHeap.cs" />
+    <Compile Include="Media\VideoInputMedia.cs" />
+    <Compile Include="Players\VideoPlayer.cs" />
+    <Compile Include="VLM\VideoLanManager.cs" />
+    <Compile Include="VLM\VlmEventManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Declarations\Declarations.csproj">
+      <Project>{819C4BAB-8FD0-463F-BB5F-119731840390}</Project>
+      <Name>Declarations</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibVlcWrapper\LibVlcWrapper.csproj">
+      <Project>{57F08087-B175-4C96-BE36-83FBC4A21065}</Project>
+      <Name>LibVlcWrapper</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

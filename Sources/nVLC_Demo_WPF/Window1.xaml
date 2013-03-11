@@ -1,0 +1,23 @@
+﻿<Window x:Class="nVLC_Demo_WPF.Window1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="nVLC WPF Demo" Height="564" Width="700" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="356*" />
+            <RowDefinition Height="170*" />
+        </Grid.RowDefinitions>
+        <Button Height="23" HorizontalAlignment="Left" Margin="92,0,0,12" Name="button1" VerticalAlignment="Bottom" Width="50" Click="button1_Click" Grid.Row="1">Open</Button>
+        <Button Height="23" HorizontalAlignment="Left" Margin="270,0,0,54" Name="button2" VerticalAlignment="Bottom" Width="54" Click="button2_Click" Grid.Row="1">Pause</Button>
+        <Button Height="23" Margin="330,0,297,54" Name="button3" VerticalAlignment="Bottom" Click="button3_Click" Grid.Row="1">Play</Button>
+        <Button Height="23" Margin="0,0,242,54" Name="button4" VerticalAlignment="Bottom" Click="button4_Click" HorizontalAlignment="Right" Width="49" Grid.Row="1">Stop</Button>
+        <Button Height="23" HorizontalAlignment="Left" Margin="92,0,0,53" Name="button5" VerticalAlignment="Bottom" Width="45" Click="button5_Click" Grid.Row="1">Mute</Button>
+        <Slider Margin="92,65,81,83" Name="slider1" Maximum="1" Minimum="0" Thumb.DragCompleted="slider1_DragCompleted" Thumb.DragStarted="slider1_DragStarted" Grid.Row="1" Value="{Binding Mode=OneWay, Path=Position}" />
+        <my:WindowsFormsHost Margin="92,14,81,119" Name="windowsFormsHost1" xmlns:my="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration" Grid.RowSpan="2" />
+        <Slider Height="22" HorizontalAlignment="Left" Margin="143,0,0,54" Name="slider2" VerticalAlignment="Bottom" Width="100" Grid.Row="1" ValueChanged="slider2_ValueChanged" Maximum="100" />
+        <TextBlock Height="21" Margin="157,0,81,12" Name="textBlock1" VerticalAlignment="Bottom" Grid.Row="1" />
+        <Label Height="28" HorizontalAlignment="Right" Margin="0,0,157,49" Name="label1" VerticalAlignment="Bottom" Width="60" Grid.Row="1">00:00:00</Label>
+        <Label Height="28" HorizontalAlignment="Right" Margin="0,0,136,49" Name="label2" VerticalAlignment="Bottom" Width="34" Grid.Row="1">/</Label>
+        <Label Height="28" HorizontalAlignment="Right" Margin="0,0,98,49" Name="label3" VerticalAlignment="Bottom" Width="62" Grid.Row="1">00:00:00</Label>
+    </Grid>
+</Window>
