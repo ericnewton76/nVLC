@@ -105,10 +105,6 @@
       <Project>{819C4BAB-8FD0-463F-BB5F-119731840390}</Project>
       <Name>Declarations</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Implementation\Implementation.csproj">
-      <Project>{6BA02CCA-2E14-4A64-8AB6-594E600D80C9}</Project>
-      <Name>Implementation</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
