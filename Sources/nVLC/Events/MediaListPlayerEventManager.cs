@@ -16,10 +16,10 @@
 
 using System;
 using Declarations.Events;
-using Implementation.Media;
+using nVLC.Media;
 using LibVlcWrapper;
 
-namespace Implementation.Events
+namespace nVLC.Events
 {
     internal class MediaListPlayerEventManager : EventManager, IMediaListPlayerEvents
     {

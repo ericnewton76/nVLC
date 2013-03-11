@@ -19,7 +19,7 @@ using System.Drawing;
 using Declarations.Filters;
 using LibVlcWrapper;
 
-namespace Implementation.Filters
+namespace nVLC.Filters
 {
    internal class CropFilter : ICropFilter
    {

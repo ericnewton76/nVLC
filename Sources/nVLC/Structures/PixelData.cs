@@ -15,10 +15,10 @@
 // ========================================================================
 
 using System;
-using Implementation.Utils;
+using nVLC.Utils;
 using System.Runtime.InteropServices;
 
-namespace Implementation
+namespace nVLC
 {
     internal unsafe struct PixelData : IDisposable
     {

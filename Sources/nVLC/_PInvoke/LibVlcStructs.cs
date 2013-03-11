@@ -16,6 +16,7 @@
 
 using System;
 using System.Runtime.InteropServices;
+using nVLC;
 
 namespace LibVlcWrapper
 {

@@ -22,10 +22,10 @@ using System.Runtime.InteropServices;
 using System.Threading;
 using Declarations;
 using Declarations.Media;
-using Implementation.Utils;
+using nVLC.Utils;
 using LibVlcWrapper;
 
-namespace Implementation.Media
+namespace nVLC.Media
 {
     [MaxLibVlcVersion("1.1.x")]
     internal sealed unsafe class VideoInputMedia : BasicMedia, IVideoInputMedia

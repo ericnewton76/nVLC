@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using LibVlcWrapper;
-using Implementation.Exceptions;
-using Implementation.Events;
+using nVLC.Exceptions;
+using nVLC.Events;
 using Declarations.Events;
 using System.Runtime.InteropServices;
 using Declarations.VLM;
 
-namespace Implementation
+namespace nVLC
 {
     internal class VlmEventManager : EventManager, IVlmEventManager
     {

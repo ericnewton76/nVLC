@@ -24,17 +24,17 @@ using Declarations.Media;
 using Declarations.MediaLibrary;
 using Declarations.Players;
 using Declarations.VLM;
-using Implementation.Discovery;
-using Implementation.Exceptions;
-using Implementation.Loggers;
-using Implementation.Media;
-using Implementation.MediaLibrary;
-using Implementation.Players;
-using Implementation.VLM;
+using nVLC.Discovery;
+using nVLC.Exceptions;
+using nVLC.Loggers;
+using nVLC.Media;
+using nVLC.MediaLibrary;
+using nVLC.Players;
+using nVLC.VLM;
 using LibVlcWrapper;
 using Microsoft.Win32;
 
-namespace Implementation
+namespace nVLC
 {
     /// <summary>
     /// Entry point for the nVLC library.

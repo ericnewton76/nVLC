@@ -23,7 +23,7 @@ using LibVlcWrapper;
 using Declarations.Players;
 using Declarations.Enums;
 
-namespace Implementation.Players
+namespace nVLC.Players
 {
     internal class DiskPlayer : VideoPlayer, IDiskPlayer
     {

@@ -17,10 +17,10 @@
 using System;
 using System.Runtime.InteropServices;
 using Declarations.Events;
-using Implementation.Media;
+using nVLC.Media;
 using LibVlcWrapper;
 
-namespace Implementation.Events
+namespace nVLC.Events
 {
     internal class EventBroker : EventManager, IEventBroker
     {

@@ -19,10 +19,10 @@ using System.Collections.Generic;
 using Declarations;
 using Declarations.Events;
 using Declarations.Media;
-using Implementation.Events;
+using nVLC.Events;
 using LibVlcWrapper;
 
-namespace Implementation.Media
+namespace nVLC.Media
 {
    internal class MediaList : DisposableBase, IMediaList, INativePointer, IEventProvider, IReferenceCount
    {

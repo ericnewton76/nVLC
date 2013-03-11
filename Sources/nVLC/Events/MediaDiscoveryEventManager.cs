@@ -21,7 +21,7 @@ using System.Text;
 using Declarations.Events;
 using LibVlcWrapper;
 
-namespace Implementation.Events
+namespace nVLC.Events
 {
     class MediaDiscoveryEventManager : EventManager, IMediaDiscoveryEvents
     {

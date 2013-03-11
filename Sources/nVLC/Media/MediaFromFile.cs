@@ -20,7 +20,7 @@ using Declarations;
 using Declarations.Media;
 using LibVlcWrapper;
 
-namespace Implementation.Media
+namespace nVLC.Media
 {
    internal class MediaFromFile : BasicMedia, IMediaFromFile
    {

@@ -19,9 +19,9 @@ using Declarations;
 using Declarations.Players;
 using LibVlcWrapper;
 using Declarations.Enums;
-using Implementation.Exceptions;
+using nVLC.Exceptions;
 
-namespace Implementation.Players
+namespace nVLC.Players
 {
     internal class AudioPlayer : BasicPlayer, IAudioPlayer
     {

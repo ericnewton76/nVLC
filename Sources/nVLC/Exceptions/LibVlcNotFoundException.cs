@@ -16,7 +16,7 @@
 
 using System;
 
-namespace Implementation.Exceptions
+namespace nVLC.Exceptions
 {
     /// <summary>
     /// Exception thrown when one of the vlc libraries are missing.

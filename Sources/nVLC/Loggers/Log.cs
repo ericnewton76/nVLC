@@ -22,7 +22,7 @@ using System.Threading;
 using Declarations;
 using LibVlcWrapper;
 
-namespace Implementation
+namespace nVLC
 {
     internal class Log : DisposableBase
     {

@@ -19,7 +19,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace LibVlcWrapper
+namespace nVLC
 {
    public enum libvlc_state_t
    {

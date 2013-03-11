@@ -21,12 +21,12 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using Declarations;
 using Declarations.Media;
-using Implementation.Media;
-using Implementation.Utils;
+using nVLC.Media;
+using nVLC.Utils;
 using System.Drawing;
 using System.Drawing.Imaging;
 
-namespace Implementation
+namespace nVLC
 {
     internal sealed unsafe class MemoryInputMedia : BasicMedia, IMemoryInputMedia
     {

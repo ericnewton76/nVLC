@@ -19,11 +19,11 @@ using Declarations;
 using Declarations.Discovery;
 using Declarations.Events;
 using Declarations.Media;
-using Implementation.Events;
-using Implementation.Media;
+using nVLC.Events;
+using nVLC.Media;
 using LibVlcWrapper;
 
-namespace Implementation.Discovery
+namespace nVLC.Discovery
 {
     internal class MediaDiscoverer : DisposableBase, IMediaDiscoverer, INativePointer, IEventProvider
     {

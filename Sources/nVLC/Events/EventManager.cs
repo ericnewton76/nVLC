@@ -21,7 +21,7 @@ using Declarations;
 using Declarations.Events;
 using LibVlcWrapper;
 
-namespace Implementation.Events
+namespace nVLC.Events
 {
    internal abstract class EventManager
    {

@@ -17,10 +17,10 @@
 using System;
 using Declarations;
 using Declarations.Events;
-using Implementation.Media;
+using nVLC.Media;
 using LibVlcWrapper;
 
-namespace Implementation.Events
+namespace nVLC.Events
 {
     class MediaEventManager : EventManager, IMediaEvents
     {

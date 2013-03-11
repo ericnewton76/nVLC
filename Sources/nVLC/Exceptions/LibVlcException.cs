@@ -17,7 +17,7 @@
 using System;
 using LibVlcWrapper;
 
-namespace Implementation.Exceptions
+namespace nVLC.Exceptions
 {
     /// <summary>
     /// Throws an exception with the latest error message.

@@ -19,9 +19,9 @@ using System.Text;
 using Declarations;
 using LibVlcWrapper;
 using System;
-using Implementation.Utils;
+using nVLC.Utils;
 
-namespace Implementation
+namespace nVLC
 {
     internal static class Extensions
     {

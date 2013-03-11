@@ -22,7 +22,7 @@ using Declarations;
 using Declarations.Enums;
 using LibVlcWrapper;
 
-namespace Implementation
+namespace nVLC
 {
     internal unsafe sealed class AudioRenderer : DisposableBase, IAudioRenderer
     {

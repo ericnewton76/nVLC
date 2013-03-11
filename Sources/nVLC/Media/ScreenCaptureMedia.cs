@@ -20,7 +20,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using Declarations.Media;
 
-namespace Implementation.Media
+namespace nVLC.Media
 {
    internal class ScreenCaptureMedia : BasicMedia, IScreenCaptureMedia
    {

@@ -23,7 +23,7 @@ using System.Runtime.InteropServices;
 using Declarations;
 using System.Diagnostics;
 
-namespace Implementation.Loggers
+namespace nVLC.Loggers
 {
     internal unsafe sealed class LogSubscriber : DisposableBase
     {

@@ -19,10 +19,10 @@ using Declarations;
 using Declarations.Events;
 using Declarations.Media;
 using Declarations.Players;
-using Implementation.Events;
+using nVLC.Events;
 using LibVlcWrapper;
 
-namespace Implementation.Players
+namespace nVLC.Players
 {
    internal class MediaListPlayer : DisposableBase, IMediaListPlayer, IEventProvider
    {

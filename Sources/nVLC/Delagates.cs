@@ -18,7 +18,7 @@ using System;
 using System.Runtime.InteropServices;
 using LibVlcWrapper;
 
-namespace Implementation
+namespace nVLC
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     delegate void VlcEventHandlerDelegate(ref libvlc_event_t libvlc_event, IntPtr userData);

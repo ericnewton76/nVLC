@@ -20,11 +20,11 @@ using System.Drawing;
 using Declarations;
 using Declarations.Filters;
 using Declarations.Players;
-using Implementation.Filters;
-using Implementation.Utils;
+using nVLC.Filters;
+using nVLC.Utils;
 using LibVlcWrapper;
 
-namespace Implementation.Players
+namespace nVLC.Players
 {
     internal class VideoPlayer : AudioPlayer, IVideoPlayer
     {

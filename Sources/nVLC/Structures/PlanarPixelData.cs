@@ -18,9 +18,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Implementation.Utils;
+using nVLC.Utils;
 
-namespace Implementation
+namespace nVLC
 {
     internal unsafe struct PlanarPixelData : IDisposable
     {

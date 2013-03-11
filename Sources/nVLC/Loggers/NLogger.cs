@@ -16,7 +16,7 @@
 
 using Declarations;
 
-namespace Implementation
+namespace nVLC
 {
    internal class NLogger : ILogger
    {

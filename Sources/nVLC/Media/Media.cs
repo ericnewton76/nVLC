@@ -20,10 +20,10 @@ using System.Text;
 using Declarations;
 using Declarations.Events;
 using Declarations.Media;
-using Implementation.Events;
+using nVLC.Events;
 using LibVlcWrapper;
 
-namespace Implementation.Media
+namespace nVLC.Media
 {
     internal class BasicMedia : DisposableBase, IMedia, INativePointer, IReferenceCount, IEventProvider
     {

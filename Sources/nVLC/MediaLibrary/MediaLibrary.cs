@@ -2,10 +2,10 @@
 using Declarations;
 using Declarations.Media;
 using Declarations.MediaLibrary;
-using Implementation.Media;
+using nVLC.Media;
 using LibVlcWrapper;
 
-namespace Implementation.MediaLibrary
+namespace nVLC.MediaLibrary
 {
     internal class MediaLibraryImpl : DisposableBase, IReferenceCount, INativePointer, IMediaLibrary
     {

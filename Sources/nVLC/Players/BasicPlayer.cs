@@ -20,9 +20,9 @@ using Declarations.Events;
 using Declarations.Media;
 using Declarations.Players;
 using LibVlcWrapper;
-using Implementation.Events;
+using nVLC.Events;
 
-namespace Implementation.Players
+namespace nVLC.Players
 {
     internal class BasicPlayer : DisposableBase, IPlayer, IEventProvider, IReferenceCount, INativePointer
     {

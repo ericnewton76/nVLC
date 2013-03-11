@@ -17,7 +17,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace Implementation.Utils
+namespace nVLC.Utils
 {
    internal unsafe class MemoryHeap
    {
