@@ -123,15 +123,16 @@
     <Compile Include="Players\VideoPlayer.cs" />
     <Compile Include="VLM\VideoLanManager.cs" />
     <Compile Include="VLM\VlmEventManager.cs" />
+    <Compile Include="_PInvoke\LibVlcEnums.cs" />
+    <Compile Include="_PInvoke\LibVlcMethods.cs" />
+    <Compile Include="_PInvoke\LibVlcStructs.cs" />
+    <Compile Include="_PInvoke\MaxLibVlcVersion.cs" />
+    <Compile Include="_PInvoke\MinimalLibVlcVersion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Declarations\Declarations.csproj">
       <Project>{819C4BAB-8FD0-463F-BB5F-119731840390}</Project>
       <Name>Declarations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\LibVlcWrapper\LibVlcWrapper.csproj">
-      <Project>{57F08087-B175-4C96-BE36-83FBC4A21065}</Project>
-      <Name>LibVlcWrapper</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
