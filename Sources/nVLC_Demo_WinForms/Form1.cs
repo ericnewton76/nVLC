@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 using System;
 using System.ComponentModel;
@@ -34,7 +34,13 @@ namespace nVLC_Demo_WinForms
         {
             InitializeComponent();
 
-            m_factory = new MediaPlayerFactory();
+            #if !__MonoCS__
+            bool findLibvlc = true;
+            #else
+            bool findLibvlc = false;
+            #endif
+
+            m_factory = new MediaPlayerFactory(findLibvlc);
             m_player = m_factory.CreatePlayer<IDiskPlayer>();
 
             m_player.Events.PlayerPositionChanged += new EventHandler<MediaPlayerPositionChanged>(Events_PlayerPositionChanged);
@@ -43,7 +49,7 @@ namespace nVLC_Demo_WinForms
             m_player.Events.PlayerStopped += new EventHandler(Events_PlayerStopped);
 
             m_player.WindowHandle = panel1.Handle;
-            trackBar2.Value = m_player.Volume;
+            trackBar2.Value = m_player.Volume > 0 ? m_player.Volume : 0;
 
             UISync.Init(this);
         }
