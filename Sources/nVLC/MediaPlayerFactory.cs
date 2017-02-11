@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -53,16 +53,16 @@ namespace nVLC
         /// <param name="frameInfo"></param>
         public MediaPlayerFactory(bool findLibvlc = false)
         {
-            string[] args = new string[] 
-             {
-                "-I", 
-                "dumy",  
-		        "--ignore-config", 
+            string[] args = new string[]
+            {
+                "-I",
+                "dumy",
+                "--ignore-config",
                 "--no-osd",
                 "--disable-screensaver",
                 "--ffmpeg-hw",
-		        "--plugin-path=./plugins" 
-             };
+                "--plugin-path=./plugins"
+            };
 
             Initialize(args, findLibvlc);
         }
@@ -125,12 +125,15 @@ namespace nVLC
             }
             catch (EntryPointNotFoundException ex)
             {
+                // FIXME: temporary hack
+                #if !__MonoCS__
                 MinimalLibVlcVersion minVersion = (MinimalLibVlcVersion)Attribute.GetCustomAttribute(ex.TargetSite, typeof(MinimalLibVlcVersion));
                 if (minVersion != null)
                 {
                     string msg = string.Format("libVLC logging functinality enabled staring libVLC version {0} while you are using version {1}", minVersion.MinimalVersion, Version);
                     m_logger.Warning(msg);
                 }
+                #endif
             }
             catch (Exception ex)
             {
@@ -180,7 +183,7 @@ namespace nVLC
         /// Creates new instance of media list.
         /// </summary>
         /// <typeparam name="T">Type of media list</typeparam>
-        /// <param name="mediaItems">Collection of media inputs</param>       
+        /// <param name="mediaItems">Collection of media inputs</param>
         /// <param name="options"></param>
         /// <returns>Newly created media list</returns>
         public T CreateMediaList<T>(IEnumerable<string> mediaItems, params string[] options) where T : IMediaList
@@ -232,7 +235,7 @@ namespace nVLC
             {
                 IntPtr pStr = LibVlcMethods.libvlc_get_version();
                 return Marshal.PtrToStringAnsi(pStr);
-            }               
+            }
         }
 
         /// <summary>
@@ -416,7 +419,7 @@ namespace nVLC
 
                 return m_vlm;
             }
-        } 
+        }
 
         /// <summary>
         /// Gets list of available audio output modules
