@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,28 +11,28 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System.Drawing;
 
 namespace nVLC.Media
 {
-   /// <summary>
-   /// Enables raw video frames input into VLC engine (based on invmem access module)
-   /// </summary>
-   public interface IVideoInputMedia : IMedia
-   {
-      /// <summary>
-      /// Adds frame to the video stream.
-      /// </summary>
-      /// <param name="frame"></param>
-      void AddFrame(Bitmap frame);
+    /// <summary>
+    /// Enables raw video frames input into VLC engine (based on invmem access module)
+    /// </summary>
+    public interface IVideoInputMedia : IMedia
+    {
+        /// <summary>
+        /// Adds frame to the video stream.
+        /// </summary>
+        /// <param name="frame"></param>
+        void AddFrame(Bitmap frame);
 
-      /// <summary>
-      /// Sets bitmap format for the video frames.
-      /// </summary>
-      /// <param name="format"></param>
-      void SetFormat(BitmapFormat format);
-   }
+        /// <summary>
+        /// Sets bitmap format for the video frames.
+        /// </summary>
+        /// <param name="format"></param>
+        void SetFormat(BitmapFormat format);
+    }
 }

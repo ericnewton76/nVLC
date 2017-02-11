@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,32 +11,32 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 namespace nVLC
 {
-   /// <summary>
-   /// Meta data types of the media object
-   /// </summary>
-   public enum MetaDataType
-   {
-      Title,
-      Artist,
-      Genre,
-      Copyright,
-      Album,
-      TrackNumber,
-      Description,
-      Rating,
-      Date,
-      Setting,
-      URL,
-      Language,
-      NowPlaying,
-      Publisher,
-      EncodedBy,
-      ArtworkURL,
-      TrackID
-   }
+    /// <summary>
+    /// Meta data types of the media object
+    /// </summary>
+    public enum MetaDataType
+    {
+        Title,
+        Artist,
+        Genre,
+        Copyright,
+        Album,
+        TrackNumber,
+        Description,
+        Rating,
+        Date,
+        Setting,
+        URL,
+        Language,
+        NowPlaying,
+        Publisher,
+        EncodedBy,
+        ArtworkURL,
+        TrackID
+    }
 }

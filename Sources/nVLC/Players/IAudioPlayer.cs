@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using nVLC.Enums;
@@ -55,7 +55,7 @@ namespace nVLC.Players
         void ToggleMute();
 
         /// <summary>
-        /// Gets custom audio renderer for processing PCM samples 
+        /// Gets custom audio renderer for processing PCM samples
         /// </summary>
         IAudioRenderer CustomAudioRenderer { get; }
 

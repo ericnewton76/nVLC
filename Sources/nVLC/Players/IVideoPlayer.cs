@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -138,7 +138,7 @@ namespace nVLC.Players
         IMemoryRenderer CustomRenderer { get; }
 
         /// <summary>
-        /// Gets custom renderer object allowing to process each frame as YUV or RGB raw pixel format. 
+        /// Gets custom renderer object allowing to process each frame as YUV or RGB raw pixel format.
         /// It also implements pre-playback callback to get and optionally set video width, height and chroma type.
         /// </summary>
         IMemoryRendererEx CustomRendererEx { get; }

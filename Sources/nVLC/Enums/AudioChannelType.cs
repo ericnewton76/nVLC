@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,18 +11,18 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 namespace nVLC
 {
-   public enum AudioChannelType
-   {
-      Error = -1,
-      Stereo = 1,
-      RStereo = 2,
-      Left = 3,
-      Right = 4,
-      Dolbys = 5
-   }
+    public enum AudioChannelType
+    {
+        Error = -1,
+        Stereo = 1,
+        RStereo = 2,
+        Left = 3,
+        Right = 4,
+        Dolbys = 5
+    }
 }

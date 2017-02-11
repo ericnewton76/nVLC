@@ -17,9 +17,10 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+
+using LibVlcWrapper;
 using nVLC.Filters;
 using nVLC.Utils;
-using LibVlcWrapper;
 
 namespace nVLC.Players
 {

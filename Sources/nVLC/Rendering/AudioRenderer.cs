@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,15 +11,16 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC.Enums;
+
 using LibVlcWrapper;
+using nVLC.Enums;
 
 namespace nVLC
 {
@@ -214,7 +215,7 @@ namespace nVLC
                 m_excHandler = null;
                 m_callbacks = null;
                 m_callbacksDelegates.Clear();
-            }          
+            }
         }
 
         public void SetExceptionHandler(Action<Exception> handler)

@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -37,7 +37,7 @@ namespace nVLC
         
         public MemoryInputMedia(IntPtr hMediaLib)
             : base(hMediaLib)
-        {           
+        {
             ImemGet pLock = OnImemGet;
             ImemRelease pUnlock = OnImemRelease;
 
@@ -190,7 +190,7 @@ namespace nVLC
                     throw new Exception("imem-get callback failed", ex);
                 }
                 return 1;
-            }           
+            }
         }
 
         private void OnImemRelease(void* data, char* cookie, uint dataSize, void* pData)
@@ -257,7 +257,7 @@ namespace nVLC
 
         public int PendingFramesCount
         {
-            get 
+            get
             {
                 return m_queue.Count;
             }

@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,24 +11,24 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 
 namespace nVLC.Events
 {
-   /// <summary>
-   /// Events raised by IMediaList object
-   /// </summary>
-   public interface IMediaListEvents
-   {
-      event EventHandler<MediaListItemAdded> ItemAdded;
+    /// <summary>
+    /// Events raised by IMediaList object
+    /// </summary>
+    public interface IMediaListEvents
+    {
+        event EventHandler<MediaListItemAdded> ItemAdded;
 
-      event EventHandler<MediaListWillAddItem> WillAddItem;
+        event EventHandler<MediaListWillAddItem> WillAddItem;
 
-      event EventHandler<MediaListItemDeleted> ItemDeleted;
+        event EventHandler<MediaListItemDeleted> ItemDeleted;
 
-      event EventHandler<MediaListWillDeleteItem> WillDeleteItem;
-   }
+        event EventHandler<MediaListWillDeleteItem> WillDeleteItem;
+    }
 }

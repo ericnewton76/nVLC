@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,24 +11,24 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 namespace nVLC.Filters
 {
-   /// <summary>
-   /// Manages deinterlacing functionality.
-   /// </summary>
-   public interface IDeinterlaceFilter
-   {
-      /// <summary>
-      /// Enables or disables deinterlacing
-      /// </summary>
-      bool Enabled { get; set; }
+    /// <summary>
+    /// Manages deinterlacing functionality.
+    /// </summary>
+    public interface IDeinterlaceFilter
+    {
+        /// <summary>
+        /// Enables or disables deinterlacing
+        /// </summary>
+        bool Enabled { get; set; }
 
-      /// <summary>
-      /// Gets or sets deinterlace algorithm
-      /// </summary>
-      DeinterlaceMode Mode { get; set; }
-   }
+        /// <summary>
+        /// Gets or sets deinterlace algorithm
+        /// </summary>
+        DeinterlaceMode Mode { get; set; }
+    }
 }

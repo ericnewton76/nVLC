@@ -3,7 +3,7 @@
 namespace nVLC.VLM
 {
     /// <summary>
-    /// Represents VLM events 
+    /// Represents VLM events
     /// </summary>
     [Serializable]
     public class VlmEvent : EventArgs

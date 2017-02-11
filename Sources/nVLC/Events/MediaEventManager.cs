@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,12 +11,12 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using nVLC.Media;
 using LibVlcWrapper;
+using nVLC.Media;
 
 namespace nVLC.Events
 {
@@ -36,8 +36,8 @@ namespace nVLC.Events
                     {
                         metaDataChanged(m_eventProvider, new MediaMetaDataChange((MetaDataType)libvlc_event.MediaDescriptor.media_meta_changed.meta_type));
                     }
-
                     break;
+
                 case libvlc_event_e.libvlc_MediaSubItemAdded:
                     if (subItemAdded != null)
                     {
@@ -45,35 +45,34 @@ namespace nVLC.Events
                         subItemAdded(m_eventProvider, new MediaNewSubItem(media));
                         media.Release();
                     }
-
                     break;
+
                 case libvlc_event_e.libvlc_MediaDurationChanged:
                     if (durationChanged != null)
                     {
                         durationChanged(m_eventProvider, new MediaDurationChange(libvlc_event.MediaDescriptor.media_duration_changed.new_duration));
                     }
-
                     break;
+
                 case libvlc_event_e.libvlc_MediaParsedChanged:
                     if (parsedChanged != null)
                     {
                         parsedChanged(m_eventProvider, new MediaParseChange(Convert.ToBoolean(libvlc_event.MediaDescriptor.media_parsed_changed.new_status)));
                     }
-
                     break;
+
                 case libvlc_event_e.libvlc_MediaFreed:
                     if (mediaFreed != null)
                     {
                         mediaFreed(m_eventProvider, new MediaFree(libvlc_event.MediaDescriptor.media_freed.md));
                     }
-
                     break;
+
                 case libvlc_event_e.libvlc_MediaStateChanged:
                     if (stateChanged != null)
                     {
                         stateChanged(m_eventProvider, new MediaStateChange((MediaState)libvlc_event.MediaDescriptor.media_state_changed.new_state));
                     }
-
                     break;
 
                 default:

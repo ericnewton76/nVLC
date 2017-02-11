@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,21 +11,21 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 
 namespace nVLC
 {
-   /// <summary>
-   /// Represents a managed object with encapsulated native pointer.
-   /// </summary>
-   public interface INativePointer
-   {
-      /// <summary>
-      /// Reference to a native memory block.
-      /// </summary>
-      IntPtr Pointer { get; }
-   }
+    /// <summary>
+    /// Represents a managed object with encapsulated native pointer.
+    /// </summary>
+    public interface INativePointer
+    {
+        /// <summary>
+        /// Reference to a native memory block.
+        /// </summary>
+        IntPtr Pointer { get; }
+    }
 }

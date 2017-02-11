@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -19,6 +19,7 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+
 using LibVlcWrapper;
 
 namespace nVLC
@@ -33,7 +34,7 @@ namespace nVLC
         LogIterator m_logIterator;
 
         public Log(IntPtr hLib, ILogger logger)
-        {           
+        {
             m_logger = logger;
 
             LibVlcMethods.libvlc_set_log_verbosity(hLib, 2);

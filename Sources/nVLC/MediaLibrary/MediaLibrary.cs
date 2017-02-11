@@ -43,7 +43,7 @@ namespace nVLC.MediaLibrary
 
         public IntPtr Pointer
         {
-            get 
+            get
             {
                 return m_hMediaLib;
             }

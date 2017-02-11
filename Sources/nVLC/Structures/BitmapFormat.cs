@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -117,7 +117,7 @@ namespace nVLC
         }
 
         /// <summary>
-        /// Gets the size in bytes of the scan line 
+        /// Gets the size in bytes of the scan line
         /// </summary>
         public int Pitch { get; private set; }
 
@@ -135,7 +135,7 @@ namespace nVLC
         /// Gets the pixel format of the bitmap. Valid only for RGB formats.
         /// </summary>
         public PixelFormat PixelFormat { get; private set; }
-       
+
         /// <summary>
         /// Gets the width of the bitmap
         /// </summary>
@@ -159,9 +159,9 @@ namespace nVLC
             get
             {
                 return ChromaType == ChromaType.I420 ||
-                       ChromaType == ChromaType.NV12 ||
-                       ChromaType == ChromaType.YV12 ||
-                       ChromaType == ChromaType.J420;
+                    ChromaType == ChromaType.NV12 ||
+                    ChromaType == ChromaType.YV12 ||
+                    ChromaType == ChromaType.J420;
             }
         }
 
@@ -173,10 +173,10 @@ namespace nVLC
             get
             {
                 return ChromaType == ChromaType.RV15 ||
-                       ChromaType == ChromaType.RV16 ||
-                       ChromaType == ChromaType.RV24 ||
-                       ChromaType == ChromaType.RV32 ||
-                       ChromaType == ChromaType.RGBA;
+                    ChromaType == ChromaType.RV16 ||
+                    ChromaType == ChromaType.RV24 ||
+                    ChromaType == ChromaType.RV32 ||
+                    ChromaType == ChromaType.RGBA;
             }
         }
 

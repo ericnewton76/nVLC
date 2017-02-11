@@ -13,9 +13,11 @@
 //    GNU General Public License for more details.
 //
 // ========================================================================
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
+
 using nVLC;
 using nVLC.Events;
 using nVLC.Media;
