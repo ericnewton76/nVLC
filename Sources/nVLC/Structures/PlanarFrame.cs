@@ -15,9 +15,6 @@
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace nVLC
 {
@@ -39,8 +36,8 @@ namespace nVLC
                 throw new ArgumentException("Number of planes must be equal to lenghts array");
             }
 
-            this.Planes = planes;
-            this.Lenghts = lenghts;
+            Planes = planes;
+            Lenghts = lenghts;
         }
 
         /// <summary>

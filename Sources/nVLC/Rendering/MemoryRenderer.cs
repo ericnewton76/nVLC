@@ -19,9 +19,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC;
-using nVLC.Utils;
 using LibVlcWrapper;
+using nVLC.Utils;
 
 namespace nVLC
 {
@@ -60,7 +59,7 @@ namespace nVLC
             m_callbacks.Add(deh);
             m_callbacks.Add(ueh);
 
-            m_timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+            m_timer.Elapsed += timer_Elapsed;
             m_timer.Interval = 1000;
         }
 

@@ -17,11 +17,8 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using nVLC;
-using nVLC.Events;
-using nVLC.Media;
-using nVLC.Events;
 using LibVlcWrapper;
+using nVLC.Events;
 
 namespace nVLC.Media
 {

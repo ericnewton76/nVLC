@@ -15,8 +15,6 @@
 // ========================================================================
 
 using System;
-using nVLC;
-using nVLC.Players;
 using LibVlcWrapper;
 using nVLC.Enums;
 using nVLC.Exceptions;

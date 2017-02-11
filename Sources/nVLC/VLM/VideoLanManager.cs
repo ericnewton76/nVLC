@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using LibVlcWrapper;
+using nVLC.Events;
 using nVLC.Exceptions;
-using nVLC.Events;
-using nVLC.Events;
-using System.Runtime.InteropServices;
-using nVLC.VLM;
 
 namespace nVLC.VLM
 {

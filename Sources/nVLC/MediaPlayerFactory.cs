@@ -18,19 +18,13 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using nVLC;
 using nVLC.Discovery;
 using nVLC.Media;
 using nVLC.MediaLibrary;
 using nVLC.Players;
 using nVLC.VLM;
-using nVLC.Discovery;
 using nVLC.Exceptions;
 using nVLC.Loggers;
-using nVLC.Media;
-using nVLC.MediaLibrary;
-using nVLC.Players;
-using nVLC.VLM;
 using LibVlcWrapper;
 using Microsoft.Win32;
 
@@ -72,7 +66,6 @@ namespace nVLC
         /// </summary>
         /// <param name="args">Collection of arguments passed to libVLC library</param>
         /// <param name="findLibvlc">True to find libvlc installation path, False to use libvlc in the executable path</param>
-        /// <param name="frameInfo"></param>
         public MediaPlayerFactory(string[] args, bool findLibvlc = false)
         {
             Initialize(args, findLibvlc);
@@ -80,7 +73,7 @@ namespace nVLC
 
         private void Initialize(string[] args, bool findLibvlc)
         {
-            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             if (findLibvlc)
             {
                 TrySetVLCPath();
@@ -191,7 +184,7 @@ namespace nVLC
             T mediaList = ObjectFactory.Build<T>(m_hMediaLib);
             foreach (var file in mediaItems)
             {
-                mediaList.Add(this.CreateMedia<IMedia>(file, options));
+                mediaList.Add(CreateMedia<IMedia>(file, options));
             }
 
             return mediaList;
@@ -515,10 +508,10 @@ namespace nVLC
                 {
                     using (RegistryKey sk = rk.OpenSubKey(skName))
                     {
-                        object DisplayName = sk.GetValue("DisplayName");
-                        if (DisplayName != null)
+                        object displayName = sk.GetValue("DisplayName");
+                        if (displayName != null)
                         {
-                            if (DisplayName.ToString().ToLower().IndexOf(vlcRegistryKey.ToLower()) > -1)
+                            if (displayName.ToString().ToLower().IndexOf(vlcRegistryKey.ToLower()) > -1)
                             {
                                 object vlcDir = sk.GetValue("InstallLocation");
 

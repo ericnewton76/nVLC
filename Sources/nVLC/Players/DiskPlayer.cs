@@ -15,12 +15,7 @@
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using nVLC;
 using LibVlcWrapper;
-using nVLC.Players;
 using nVLC.Enums;
 
 namespace nVLC.Players

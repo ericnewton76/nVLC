@@ -15,12 +15,9 @@
 // ========================================================================
 
 using System;
-using nVLC;
+using LibVlcWrapper;
 using nVLC.Events;
 using nVLC.Media;
-using nVLC.Players;
-using nVLC.Events;
-using LibVlcWrapper;
 
 namespace nVLC.Players
 {

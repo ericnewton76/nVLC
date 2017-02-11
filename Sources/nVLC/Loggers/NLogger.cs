@@ -14,8 +14,6 @@
 //     
 // ========================================================================
 
-using nVLC;
-
 namespace nVLC
 {
    internal class NLogger : ILogger

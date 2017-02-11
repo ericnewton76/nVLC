@@ -15,13 +15,8 @@
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using LibVlcWrapper;
 using System.Runtime.InteropServices;
-using nVLC;
-using System.Diagnostics;
+using LibVlcWrapper;
 
 namespace nVLC.Loggers
 {

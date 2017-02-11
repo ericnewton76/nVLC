@@ -17,14 +17,12 @@
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using nVLC;
-using nVLC.Media;
-using nVLC.Media;
-using nVLC.Utils;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
+using System.Runtime.InteropServices;
+using nVLC.Media;
+using nVLC.Utils;
 
 namespace nVLC
 {

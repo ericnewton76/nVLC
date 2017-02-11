@@ -69,7 +69,7 @@ namespace nVLC
       {
          if (m_isDisposed)
          {
-            throw new ObjectDisposedException(this.GetType().Name);
+            throw new ObjectDisposedException(GetType().Name);
          }
       }
    } 

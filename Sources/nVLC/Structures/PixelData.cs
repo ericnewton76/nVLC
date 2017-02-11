@@ -16,7 +16,6 @@
 
 using System;
 using nVLC.Utils;
-using System.Runtime.InteropServices;
 
 namespace nVLC
 {
@@ -28,14 +27,14 @@ namespace nVLC
         public PixelData(int size)
         {
             this.size = size;
-            this.pPixelData = (byte*)MemoryHeap.Alloc(size);
+            pPixelData = (byte*)MemoryHeap.Alloc(size);
         }
 
         #region IDisposable Members
 
         public void Dispose()
         {
-            MemoryHeap.Free(this.pPixelData);
+            MemoryHeap.Free(pPixelData);
         }
 
         #endregion

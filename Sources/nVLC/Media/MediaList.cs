@@ -16,9 +16,6 @@
 
 using System;
 using System.Collections.Generic;
-using nVLC;
-using nVLC.Events;
-using nVLC.Media;
 using nVLC.Events;
 using LibVlcWrapper;
 

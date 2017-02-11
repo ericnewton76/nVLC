@@ -1,7 +1,4 @@
 ﻿using System;
-using nVLC;
-using nVLC.Media;
-using nVLC.MediaLibrary;
 using nVLC.Media;
 using LibVlcWrapper;
 

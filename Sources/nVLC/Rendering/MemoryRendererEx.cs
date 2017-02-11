@@ -18,8 +18,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC;
-using nVLC.Utils;
 using LibVlcWrapper;
 
 namespace nVLC
@@ -59,7 +57,7 @@ namespace nVLC
             m_callbacks.Add(deh);
             m_callbacks.Add(formatCallback);
            
-            m_timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+            m_timer.Elapsed += timer_Elapsed;
             m_timer.Interval = 1000;
 
             LibVlcMethods.libvlc_video_set_format_callbacks(m_hMediaPlayer, pFormatCallback, IntPtr.Zero);        

@@ -18,7 +18,6 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC;
 using nVLC.Enums;
 using LibVlcWrapper;
 
@@ -71,7 +70,7 @@ namespace nVLC
             m_callbacksDelegates.Add(flush);
             m_callbacksDelegates.Add(drain);
 
-            m_timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+            m_timer.Elapsed += timer_Elapsed;
             m_timer.Interval = 1000;
         }
 
@@ -93,7 +92,7 @@ namespace nVLC
         {
             if (callbacks.SoundCallback == null)
             {
-                throw new ArgumentNullException("Sound playback callback must be set");
+                throw new ArgumentNullException("callbacks");
             }
 
             m_callbacks = callbacks;

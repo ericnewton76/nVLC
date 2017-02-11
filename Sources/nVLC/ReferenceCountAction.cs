@@ -14,8 +14,6 @@
 //     
 // ========================================================================
 
-using System;
-
 namespace nVLC
 {
    enum ReferenceCountAction
