@@ -15,7 +15,6 @@
 // ========================================================================
 
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -26,6 +25,11 @@ using nVLC.Utils;
 
 namespace nVLC
 {
+    // TODO: remove this temporary hack!
+    #if !LEGACY_N3
+
+    using System.Collections.Concurrent;
+
     internal sealed unsafe class MemoryInputMedia : BasicMedia, IMemoryInputMedia
     {
         IntPtr m_pLock, m_pUnlock;
@@ -263,4 +267,6 @@ namespace nVLC
             }
         }
     }
+
+    #endif
 }

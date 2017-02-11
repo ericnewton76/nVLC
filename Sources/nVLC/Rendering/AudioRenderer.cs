@@ -21,6 +21,7 @@ using System.Timers;
 
 using LibVlcWrapper;
 using nVLC.Enums;
+using nVLC.Utils;
 
 namespace nVLC
 {
@@ -177,7 +178,7 @@ namespace nVLC
             string formatStr = Marshal.PtrToStringAnsi(pFormat);
 
             SoundType sType;
-            if (!Enum.TryParse<SoundType>(formatStr, out sType))
+            if (!EnumUtils.TryParse<SoundType>(formatStr, out sType))
             {
                 ArgumentException exc = new ArgumentException("Unsupported sound type " + formatStr);
                 if (m_excHandler != null)

@@ -18,7 +18,9 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
+
 using LibVlcWrapper;
+using nVLC.Utils;
 
 namespace nVLC
 {
@@ -70,7 +72,7 @@ namespace nVLC
             string chromaStr = Marshal.PtrToStringAnsi(pChroma);
 
             ChromaType type;
-            if (!Enum.TryParse<ChromaType>(chromaStr, out type))
+            if (!EnumUtils.TryParse<ChromaType>(chromaStr, out type))
             {
                 ArgumentException exc = new ArgumentException("Unsupported chroma type " + chromaStr);
                 if (m_excHandler != null)

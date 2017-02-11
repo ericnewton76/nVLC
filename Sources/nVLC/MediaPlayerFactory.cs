@@ -27,6 +27,7 @@ using nVLC.Loggers;
 using nVLC.Media;
 using nVLC.MediaLibrary;
 using nVLC.Players;
+using nVLC.Utils;
 using nVLC.VLM;
 
 namespace nVLC
@@ -265,7 +266,10 @@ namespace nVLC
                 objectMap.Add(typeof(IVideoLanManager), typeof(VideoLanManager));
                 objectMap.Add(typeof(IMediaDiscoverer), typeof(MediaDiscoverer));
                 objectMap.Add(typeof(IMediaLibrary), typeof(MediaLibraryImpl));
+
+                #if !LEGACY_N3
                 objectMap.Add(typeof(IMemoryInputMedia), typeof(MemoryInputMedia));
+                #endif
             }
 
             public static T Build<T>(params object[] args)
@@ -479,7 +483,7 @@ namespace nVLC
         {
             try
             {
-                if (Environment.Is64BitProcess)
+                if (Compatibility.Is64BitProcess())
                 {
                     TrySet64BitPath();
                 }

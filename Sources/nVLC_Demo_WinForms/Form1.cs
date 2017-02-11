@@ -22,6 +22,7 @@ using nVLC;
 using nVLC.Events;
 using nVLC.Media;
 using nVLC.Players;
+using nVLC.Utils;
 
 namespace nVLC_Demo_WinForms
 {

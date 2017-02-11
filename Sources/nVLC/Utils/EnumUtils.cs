@@ -21,7 +21,7 @@ using System.Reflection;
 
 namespace nVLC.Utils
 {
-    class EnumUtils
+    internal class EnumUtils
     {
         public static string GetEnumDescription(Enum value)
         {
@@ -53,6 +53,23 @@ namespace nVLC.Utils
             }
 
             return dic;
+        }
+
+        /// <summary>
+        /// Converts the string representation of the name or numeric value of one or more enumerated constants to an equivalent enumerated object.
+        /// </summary>
+        /// <typeparam name="T">Enum type</typeparam>
+        /// <param name="value">A string containing the name or value to convert.</param>
+        /// <returns>An object of type T with the specified value</returns>
+        public static bool TryParse<T>(string value, out T result)
+        {
+            try {
+                result = (T)System.Enum.Parse(typeof(T), value);
+                return true;
+            } catch {
+                result = default(T);
+                return false;
+            }
         }
     }
 }
