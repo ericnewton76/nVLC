@@ -18,15 +18,16 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-
-using LibVlcWrapper;
 using Microsoft.Win32;
 using nVLC.Discovery;
 using nVLC.Exceptions;
+using nVLC.Internal;
 using nVLC.Loggers;
 using nVLC.Media;
 using nVLC.MediaLibrary;
+using nVLC.Natives;
 using nVLC.Players;
+using nVLC.Structures;
 using nVLC.Utils;
 using nVLC.VLM;
 

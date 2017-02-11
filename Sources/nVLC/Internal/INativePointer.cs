@@ -16,7 +16,7 @@
 
 using System;
 
-namespace nVLC
+namespace nVLC.Internal
 {
     /// <summary>
     /// Represents a managed object with encapsulated native pointer.

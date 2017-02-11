@@ -16,8 +16,9 @@
 
 using System;
 using nVLC.Events;
+using nVLC.Internal;
 using nVLC.Media;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.Players
 {
@@ -182,7 +183,7 @@ namespace nVLC.Players
 
         public override bool Equals(object obj)
         {
-            return this.Equals((IPlayer)obj, this);
+            return Equals((IPlayer)obj, this);
         }
 
         public override int GetHashCode()

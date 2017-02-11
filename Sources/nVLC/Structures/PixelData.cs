@@ -17,7 +17,7 @@
 using System;
 using nVLC.Utils;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     internal unsafe struct PixelData : IDisposable
     {

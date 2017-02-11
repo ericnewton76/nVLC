@@ -17,7 +17,7 @@
 using System;
 using nVLC.Enums;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Specifies the parameters of the sound.

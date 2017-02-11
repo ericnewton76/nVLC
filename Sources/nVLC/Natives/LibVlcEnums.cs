@@ -14,7 +14,7 @@
 //
 // ========================================================================
 
-namespace nVLC
+namespace nVLC.Natives
 {
     public enum libvlc_state_t
     {

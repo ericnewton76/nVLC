@@ -15,7 +15,7 @@
 // ========================================================================
 
 using System;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.Events
 {

@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
-using LibVlcWrapper;
 using nVLC.Events;
+using nVLC.Natives;
 using nVLC.VLM;
 
 namespace nVLC

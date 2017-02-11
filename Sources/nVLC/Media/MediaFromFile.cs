@@ -16,7 +16,9 @@
 
 using System;
 using System.Runtime.InteropServices;
-using LibVlcWrapper;
+using nVLC.Enums;
+using nVLC.Natives;
+using nVLC.Structures;
 
 namespace nVLC.Media
 {

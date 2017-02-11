@@ -16,7 +16,7 @@
 
 using System.ComponentModel;
 
-namespace nVLC
+namespace nVLC.Enums
 {
     /// <summary>
     /// Available video aspect ratio modes

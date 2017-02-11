@@ -14,6 +14,9 @@
 //
 // ========================================================================
 
+using nVLC.Enums;
+using nVLC.Structures;
+
 namespace nVLC.Media
 {
     /// <summary>

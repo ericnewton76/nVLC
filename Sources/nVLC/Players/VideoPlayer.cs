@@ -17,9 +17,10 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-
-using LibVlcWrapper;
+using nVLC.Enums;
 using nVLC.Filters;
+using nVLC.Natives;
+using nVLC.Rendering;
 using nVLC.Utils;
 
 namespace nVLC.Players

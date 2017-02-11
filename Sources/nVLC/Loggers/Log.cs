@@ -19,10 +19,10 @@ using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using nVLC.Internal;
+using nVLC.Natives;
 
-using LibVlcWrapper;
-
-namespace nVLC
+namespace nVLC.Loggers
 {
     internal class Log : DisposableBase
     {
@@ -167,7 +167,7 @@ namespace nVLC
 
             System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
             {
-                return this.GetEnumerator();
+                return GetEnumerator();
             }
 
             #endregion

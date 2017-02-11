@@ -15,8 +15,9 @@
 // ========================================================================
 
 using System;
+using nVLC.Structures;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     /// <summary>
     /// Enables custom processing of audio samples

@@ -16,17 +16,16 @@
 
 using System;
 
-namespace nVLC.Structures
+namespace nVLC.Natives
 {
-    /// <summary>
-    /// Information structure for audio and video filters
-    /// </summary>
-    [Serializable]
-    public struct FilterInfo
+    [AttributeUsage(AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
+    public class MinimalLibVlcVersion : Attribute
     {
-        public string Name;
-        public string Shortname;
-        public string Longname;
-        public string Help;
+        public MinimalLibVlcVersion(string minVersion)
+        {
+            MinimalVersion = minVersion;
+        }
+
+        public string MinimalVersion { get; private set; }
     }
 }

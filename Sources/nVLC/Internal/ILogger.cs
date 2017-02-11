@@ -14,7 +14,7 @@
 //
 // ========================================================================
 
-namespace nVLC
+namespace nVLC.Internal
 {
     public interface ILogger
     {

@@ -15,8 +15,9 @@
 // ========================================================================
 
 using System;
+using nVLC.Enums;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Data structure containing parameters of elementary media stream

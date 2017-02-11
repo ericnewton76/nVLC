@@ -14,6 +14,7 @@
 //
 // ========================================================================
 
+using nVLC.Enums;
 using nVLC.Events;
 
 namespace nVLC.Players

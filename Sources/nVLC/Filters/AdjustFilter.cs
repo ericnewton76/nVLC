@@ -15,7 +15,7 @@
 // ========================================================================
 
 using System;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.Filters
 {
@@ -38,7 +38,7 @@ namespace nVLC.Filters
             }
             set
             {
-                SetVideoAdjustType<int>(libvlc_video_adjust_option_t.libvlc_adjust_Enable, Convert.ToInt32(value));
+                SetVideoAdjustType(libvlc_video_adjust_option_t.libvlc_adjust_Enable, Convert.ToInt32(value));
             }
         }
 
@@ -50,7 +50,7 @@ namespace nVLC.Filters
             }
             set
             {
-                SetVideoAdjustType<float>(libvlc_video_adjust_option_t.libvlc_adjust_Contrast, value);
+                SetVideoAdjustType(libvlc_video_adjust_option_t.libvlc_adjust_Contrast, value);
             }
         }
 
@@ -62,7 +62,7 @@ namespace nVLC.Filters
             }
             set
             {
-                SetVideoAdjustType<float>(libvlc_video_adjust_option_t.libvlc_adjust_Brightness, value);
+                SetVideoAdjustType(libvlc_video_adjust_option_t.libvlc_adjust_Brightness, value);
             }
         }
 
@@ -74,7 +74,7 @@ namespace nVLC.Filters
             }
             set
             {
-                SetVideoAdjustType<int>(libvlc_video_adjust_option_t.libvlc_adjust_Enable, value);
+                SetVideoAdjustType(libvlc_video_adjust_option_t.libvlc_adjust_Enable, value);
             }
         }
 
@@ -86,7 +86,7 @@ namespace nVLC.Filters
             }
             set
             {
-                SetVideoAdjustType<float>(libvlc_video_adjust_option_t.libvlc_adjust_Saturation, value);
+                SetVideoAdjustType(libvlc_video_adjust_option_t.libvlc_adjust_Saturation, value);
             }
         }
 
@@ -98,7 +98,7 @@ namespace nVLC.Filters
             }
             set
             {
-                SetVideoAdjustType<float>(libvlc_video_adjust_option_t.libvlc_adjust_Gamma, value);
+                SetVideoAdjustType(libvlc_video_adjust_option_t.libvlc_adjust_Gamma, value);
             }
         }
 

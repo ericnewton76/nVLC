@@ -14,7 +14,7 @@
 //
 // ========================================================================
 
-namespace nVLC
+namespace nVLC.Enums
 {
     public enum AudioChannelType
     {

@@ -16,7 +16,8 @@
 
 using System;
 using System.Runtime.InteropServices;
-using LibVlcWrapper;
+using nVLC.Internal;
+using nVLC.Natives;
 
 namespace nVLC.Loggers
 {

@@ -16,7 +16,9 @@
 
 using System;
 using System.Collections.Generic;
+using nVLC.Enums;
 using nVLC.Events;
+using nVLC.Structures;
 
 namespace nVLC.Media
 {

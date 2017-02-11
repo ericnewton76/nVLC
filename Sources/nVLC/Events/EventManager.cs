@@ -17,7 +17,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.Events
 {

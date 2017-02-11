@@ -16,8 +16,9 @@
 
 using System;
 using System.Drawing.Imaging;
+using nVLC.Enums;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Specifies the parameters of the bitmap.
@@ -46,8 +47,8 @@ namespace nVLC
             {
                 Pitch = Width * BitsPerPixel / 8;
                 PlaneSizes[0] = ImageSize = Pitch * Height;
-                Pitches = new int[1] { Pitch };
-                Lines = new int[1] { Height };
+                Pitches = new int[] { Pitch };
+                Lines = new int[] { Height };
             }
         }
 
@@ -85,8 +86,8 @@ namespace nVLC
                     Planes = 2;
                     PlaneSizes[0] = Width * Height;
                     PlaneSizes[1] = Width * Height / 2;
-                    Pitches = new int[2] { Width, Width};
-                    Lines = new int[2] { Height, Height / 2};
+                    Pitches = new int[] { Width, Width};
+                    Lines = new int[] { Height, Height / 2};
                     ImageSize = PlaneSizes[0] + PlaneSizes[1];
                     break;
 
@@ -106,8 +107,8 @@ namespace nVLC
                 case ChromaType.UYVY:
                     BitsPerPixel = 16;
                     PlaneSizes[0] = Width * Height * 2;
-                    Pitches = new int[1] { Width * 2};
-                    Lines = new int[1] { Height };
+                    Pitches = new int[] { Width * 2};
+                    Lines = new int[] { Height };
                     ImageSize = PlaneSizes[0];
                     break;
 

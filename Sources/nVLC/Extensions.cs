@@ -16,7 +16,9 @@
 
 using System.Drawing;
 using System.Text;
-using LibVlcWrapper;
+using nVLC.Enums;
+using nVLC.Natives;
+using nVLC.Structures;
 
 namespace nVLC
 {

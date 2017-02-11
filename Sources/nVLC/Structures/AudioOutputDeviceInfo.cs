@@ -16,7 +16,7 @@
 
 using System;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Represents hardware audio output device such as sound card.

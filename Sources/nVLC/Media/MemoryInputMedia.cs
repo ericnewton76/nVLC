@@ -20,16 +20,15 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Linq;
 using System.Runtime.InteropServices;
-using nVLC.Media;
+using nVLC.Structures;
 using nVLC.Utils;
 
-namespace nVLC
+namespace nVLC.Media
 {
     // TODO: remove this temporary hack!
     #if !LEGACY_N3
-
     using System.Collections.Concurrent;
-
+    
     internal sealed unsafe class MemoryInputMedia : BasicMedia, IMemoryInputMedia
     {
         IntPtr m_pLock, m_pUnlock;

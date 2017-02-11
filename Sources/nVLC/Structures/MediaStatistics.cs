@@ -16,7 +16,7 @@
 
 using System;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Data structure containing media statistics' parameters.

@@ -17,8 +17,11 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using LibVlcWrapper;
+using nVLC.Enums;
 using nVLC.Events;
+using nVLC.Internal;
+using nVLC.Natives;
+using nVLC.Structures;
 
 namespace nVLC.Media
 {
@@ -242,7 +245,7 @@ namespace nVLC.Media
 
         public override bool Equals(object obj)
         {
-            return this.Equals((IMedia)obj, this);
+            return Equals((IMedia)obj, this);
         }
 
         public override int GetHashCode()

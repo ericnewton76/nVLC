@@ -14,7 +14,7 @@
 //
 // ========================================================================
 
-namespace nVLC
+namespace nVLC.Enums
 {
     /// <summary>
     /// Available playback modes for the media list player.

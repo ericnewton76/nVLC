@@ -18,12 +18,12 @@ using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-
-using LibVlcWrapper;
 using nVLC.Enums;
+using nVLC.Natives;
+using nVLC.Structures;
 using nVLC.Utils;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     internal unsafe sealed class AudioRenderer : DisposableBase, IAudioRenderer
     {
@@ -178,7 +178,7 @@ namespace nVLC
             string formatStr = Marshal.PtrToStringAnsi(pFormat);
 
             SoundType sType;
-            if (!EnumUtils.TryParse<SoundType>(formatStr, out sType))
+            if (!EnumUtils.TryParse(formatStr, out sType))
             {
                 ArgumentException exc = new ArgumentException("Unsupported sound type " + formatStr);
                 if (m_excHandler != null)
@@ -202,7 +202,7 @@ namespace nVLC
             *rate = m_format.Rate;
             *channels = m_format.Channels;
 
-            return m_format.UseCustomAudioRendering == true ? 0 : 1;
+            return m_format.UseCustomAudioRendering ? 0 : 1;
         }
 
         protected override void Dispose(bool disposing)

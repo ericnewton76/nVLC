@@ -15,9 +15,11 @@
 // ========================================================================
 
 using System;
-using LibVlcWrapper;
 using nVLC.Enums;
 using nVLC.Exceptions;
+using nVLC.Natives;
+using nVLC.Rendering;
+using nVLC.Structures;
 
 namespace nVLC.Players
 {

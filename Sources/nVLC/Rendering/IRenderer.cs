@@ -16,7 +16,7 @@
 
 using System;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     /// <summary>
     /// Base type for custom rendering types

@@ -1,6 +1,7 @@
 ﻿using System;
+using nVLC.Internal;
 using nVLC.Media;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.MediaLibrary
 {

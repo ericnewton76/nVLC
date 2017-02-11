@@ -16,7 +16,9 @@
 
 using System;
 using System.Drawing;
+using nVLC.Enums;
 using nVLC.Filters;
+using nVLC.Rendering;
 
 namespace nVLC.Players
 {

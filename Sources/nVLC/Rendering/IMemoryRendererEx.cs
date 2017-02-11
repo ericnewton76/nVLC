@@ -15,8 +15,9 @@
 // ========================================================================
 
 using System;
+using nVLC.Structures;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     /// <summary>
     /// Contains methods for setting custom processing of video frames.

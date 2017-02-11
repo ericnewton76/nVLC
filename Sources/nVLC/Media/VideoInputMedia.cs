@@ -20,7 +20,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Threading;
-using LibVlcWrapper;
+using nVLC.Natives;
+using nVLC.Structures;
 using nVLC.Utils;
 
 namespace nVLC.Media

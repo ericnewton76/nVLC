@@ -15,6 +15,7 @@
 // ========================================================================
 
 using System.Drawing;
+using nVLC.Structures;
 
 namespace nVLC.Media
 {

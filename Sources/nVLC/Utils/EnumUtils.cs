@@ -64,7 +64,7 @@ namespace nVLC.Utils
         public static bool TryParse<T>(string value, out T result)
         {
             try {
-                result = (T)System.Enum.Parse(typeof(T), value);
+                result = (T)Enum.Parse(typeof(T), value);
                 return true;
             } catch {
                 result = default(T);

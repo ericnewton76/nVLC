@@ -20,6 +20,7 @@ using nVLC.Discovery;
 using nVLC.Media;
 using nVLC.MediaLibrary;
 using nVLC.Players;
+using nVLC.Structures;
 using nVLC.VLM;
 
 namespace nVLC

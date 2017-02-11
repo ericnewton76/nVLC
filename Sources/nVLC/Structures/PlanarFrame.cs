@@ -16,7 +16,7 @@
 
 using System;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Structure for pixel planes and their sizes

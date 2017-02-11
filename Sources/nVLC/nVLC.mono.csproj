@@ -181,11 +181,12 @@
     <Compile Include="VLM\VLM.cs" />
     <Compile Include="VLM\VlmEvent.cs" />
     <Compile Include="VLM\VlmEventManager.cs" />
-    <Compile Include="_PInvoke\LibVlcEnums.cs" />
-    <Compile Include="_PInvoke\LibVlcMethods.cs" />
-    <Compile Include="_PInvoke\LibVlcStructs.cs" />
-    <Compile Include="_PInvoke\MaxLibVlcVersion.cs" />
-    <Compile Include="_PInvoke\MinimalLibVlcVersion.cs" />
+    <Compile Include="Natives\LibVlcEnums.cs" />
+    <Compile Include="Natives\LibVlcMethods.cs" />
+    <Compile Include="Natives\LibVlcStructs.cs" />
+    <Compile Include="Natives\MaxLibVlcVersion.cs" />
+    <Compile Include="Natives\MinimalLibVlcVersion.cs" />
+    <Compile Include="Utils\Compatibility.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
