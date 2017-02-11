@@ -211,6 +211,7 @@ namespace nVLC
 
             if (disposing)
             {
+                m_timer.Dispose();
                 m_formatSetupCB = null;
                 m_excHandler = null;
                 m_callbacks = null;

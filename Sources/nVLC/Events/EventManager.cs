@@ -21,7 +21,7 @@ using LibVlcWrapper;
 
 namespace nVLC.Events
 {
-    internal abstract class EventManager
+    internal abstract class EventManager : DisposableBase
     {
         protected IEventProvider m_eventProvider;
         List<VlcEventHandlerDelegate> m_callbacks = new List<VlcEventHandlerDelegate>();
@@ -42,9 +42,7 @@ namespace nVLC.Events
         protected void Attach(libvlc_event_e eType)
         {
             if (LibVlcMethods.libvlc_event_attach(m_eventProvider.EventManagerHandle, eType, hCallback1, IntPtr.Zero) != 0)
-            {
                 throw new OutOfMemoryException("Failed to subscribe to event notification");
-            }
         }
 
         protected void Dettach(libvlc_event_e eType)

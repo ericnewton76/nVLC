@@ -238,6 +238,11 @@ namespace nVLC
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                m_log.Dispose();
+            }
+
             Release();
         }
 

@@ -108,7 +108,7 @@ namespace nVLC
                     }
                     else
                     {
-                        throw ex;
+                        throw;
                     }
                 }
             }

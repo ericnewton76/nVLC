@@ -43,12 +43,14 @@ namespace nVLC
         /// 
         /// </summary>
         /// <param name="disposing"></param>
-        protected abstract void Dispose(bool disposing);
-        //      if (disposing)
-        //      {
-        //         // get rid of managed resources
-        //      }
-        //      // get rid of unmanaged resources
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                // get rid of managed resources
+            }
+            // get rid of unmanaged resources
+        }
 
         /// <summary>
         /// 

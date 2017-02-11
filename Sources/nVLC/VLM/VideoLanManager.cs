@@ -39,6 +39,11 @@ namespace nVLC.VLM
 
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                m_Eventbroker.Dispose();
+            }
+
             try
             {
                 LibVlcMethods.libvlc_vlm_release(m_hMediaLib);

@@ -45,6 +45,9 @@ namespace LibVlcWrapper
         public static extern void libvlc_release(IntPtr libvlc_instance_t);
 
         [DllImport(libvlc, CallingConvention = CallingConvention.Cdecl)]
+        public static extern IntPtr libvlc_free(IntPtr p_instance);
+
+        [DllImport(libvlc, CallingConvention = CallingConvention.Cdecl)]
         public static extern void libvlc_retain(IntPtr p_instance);
 
         [DllImport(libvlc, CallingConvention = CallingConvention.Cdecl)]
@@ -828,7 +831,6 @@ namespace LibVlcWrapper
 
         [DllImport(libvlc, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr libvlc_vlm_get_event_manager(IntPtr p_instance);
-
 
         #endregion
     }

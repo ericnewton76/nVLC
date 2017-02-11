@@ -246,7 +246,7 @@ namespace nVLC
                         MemoryHeap.Free(item.Data.ToPointer());
                     }
                 }
-                m_queue = null;
+                m_queue.Dispose();
             }
         }
 
