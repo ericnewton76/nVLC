@@ -101,13 +101,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Declarations\Declarations.csproj">
-      <Project>{819C4BAB-8FD0-463F-BB5F-119731840390}</Project>
-      <Name>Declarations</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Implementation\Implementation.csproj">
+    <ProjectReference Include="..\nVLC\nVLC.csproj">
       <Project>{6BA02CCA-2E14-4A64-8AB6-594E600D80C9}</Project>
-      <Name>Implementation</Name>
+      <Name>nVLC</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

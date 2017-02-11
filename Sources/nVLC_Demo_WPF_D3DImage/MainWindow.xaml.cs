@@ -17,11 +17,11 @@
 using System;
 using System.Windows;
 using System.Windows.Controls.Primitives;
-using Declarations;
-using Declarations.Events;
-using Declarations.Media;
-using Declarations.Players;
-using Implementation;
+using nVLC;
+using nVLC.Events;
+using nVLC.Media;
+using nVLC.Players;
+using nVLC;
 using Microsoft.Win32;
 
 namespace nVLC_Demo_WPF_D3DImage

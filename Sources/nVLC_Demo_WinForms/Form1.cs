@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,16 +11,18 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
+
 using System;
 using System.ComponentModel;
 using System.Windows.Forms;
-using Declarations;
-using Declarations.Events;
-using Declarations.Media;
-using Declarations.Players;
-using Implementation;
+
+using nVLC;
+using nVLC.Events;
+using nVLC.Media;
+using nVLC.Players;
+using nVLC.Utils;
 
 namespace nVLC_Demo_WinForms
 {
@@ -34,16 +36,22 @@ namespace nVLC_Demo_WinForms
         {
             InitializeComponent();
 
-            m_factory = new MediaPlayerFactory();
+            #if !__MonoCS__
+            bool findLibvlc = true;
+            #else
+            bool findLibvlc = false;
+            #endif
+
+            m_factory = new MediaPlayerFactory(findLibvlc);
             m_player = m_factory.CreatePlayer<IDiskPlayer>();
 
-            m_player.Events.PlayerPositionChanged += new EventHandler<MediaPlayerPositionChanged>(Events_PlayerPositionChanged);
-            m_player.Events.TimeChanged += new EventHandler<MediaPlayerTimeChanged>(Events_TimeChanged);
-            m_player.Events.MediaEnded += new EventHandler(Events_MediaEnded);
-            m_player.Events.PlayerStopped += new EventHandler(Events_PlayerStopped);
+            m_player.Events.PlayerPositionChanged += Events_PlayerPositionChanged;
+            m_player.Events.TimeChanged += Events_TimeChanged;
+            m_player.Events.MediaEnded += Events_MediaEnded;
+            m_player.Events.PlayerStopped += Events_PlayerStopped;
 
             m_player.WindowHandle = panel1.Handle;
-            trackBar2.Value = m_player.Volume;
+            trackBar2.Value = m_player.Volume > 0 ? m_player.Volume : 0;
 
             UISync.Init(this);
         }
@@ -61,8 +69,8 @@ namespace nVLC_Demo_WinForms
         private void InitControls()
         {
             trackBar1.Value = 0;
-            lblTime.Text = "00:00:00";
-            lblDuration.Text = "00:00:00";
+            lblTime.Text = @"00:00:00";
+            lblDuration.Text = @"00:00:00";
         }
 
         void Events_TimeChanged(object sender, MediaPlayerTimeChanged e)
@@ -77,10 +85,12 @@ namespace nVLC_Demo_WinForms
 
         private void LoadMedia()
         {
-            OpenFileDialog ofd = new OpenFileDialog();
-            if (ofd.ShowDialog() == DialogResult.OK)
+            using (var ofd = new OpenFileDialog())
             {
-                textBox1.Text = ofd.FileName;
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    textBox1.Text = ofd.FileName;
+                }
             }
         }
 
@@ -104,9 +114,9 @@ namespace nVLC_Demo_WinForms
             if (!string.IsNullOrEmpty(textBox1.Text))
             {
                 m_media = m_factory.CreateMedia<IMedia>(textBox1.Text);
-                m_media.Events.DurationChanged += new EventHandler<MediaDurationChange>(Events_DurationChanged);
-                m_media.Events.StateChanged += new EventHandler<MediaStateChange>(Events_StateChanged);
-                m_media.Events.ParsedChanged += new EventHandler<MediaParseChange>(Events_ParsedChanged);
+                m_media.Events.DurationChanged += Events_DurationChanged;
+                m_media.Events.StateChanged += Events_StateChanged;
+                m_media.Events.ParsedChanged += Events_ParsedChanged;
 
                 m_player.Open(m_media);
                 m_media.Parse(true);
