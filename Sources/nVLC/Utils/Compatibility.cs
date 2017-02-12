@@ -4,10 +4,6 @@ using System.Runtime.InteropServices;
 
 namespace nVLC.Utils
 {
-    #if LEGACY_N3
-    public delegate void Action();
-    #endif
-
     /// <summary>
     /// 
     /// </summary>
