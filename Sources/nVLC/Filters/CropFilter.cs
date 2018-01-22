@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,62 +11,61 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Drawing;
-using nVLC.Filters;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.Filters
 {
-   internal class CropFilter : ICropFilter
-   {
-      IntPtr m_hMediaPlayer;
-      bool m_enabled = false;
-      
-      public CropFilter(IntPtr hMediaPlayer)
-      {
-         m_hMediaPlayer = hMediaPlayer;
-      }
+    internal class CropFilter : ICropFilter
+    {
+        IntPtr m_hMediaPlayer;
+        bool m_enabled = false;
 
-      #region ICropFilter Members
+        public CropFilter(IntPtr hMediaPlayer)
+        {
+            m_hMediaPlayer = hMediaPlayer;
+        }
 
-      public bool Enabled
-      {
-         get
-         {
-            return m_enabled;
-         }
-         set
-         {
-            m_enabled = value;
-            if (m_enabled)
+        #region ICropFilter Members
+
+        public bool Enabled
+        {
+            get
             {
-               CropGeometry = CropArea.ToCropFilterString();
+                return m_enabled;
             }
-            else
+            set
             {
-               CropGeometry = null;
+                m_enabled = value;
+                if (m_enabled)
+                {
+                    CropGeometry = CropArea.ToCropFilterString();
+                }
+                else
+                {
+                    CropGeometry = null;
+                }
             }
-         }
-      }
+        }
 
-      public Rectangle CropArea { get; set; }
+        public Rectangle CropArea { get; set; }
 
-      #endregion
+        #endregion
 
-      string CropGeometry
-      {
-         get
-         {
-            return LibVlcMethods.libvlc_video_get_crop_geometry(m_hMediaPlayer);
-         }
-         set
-         {
-            LibVlcMethods.libvlc_video_set_crop_geometry(m_hMediaPlayer, value.ToUtf8());
-         }
-      }
-   }
+        string CropGeometry
+        {
+            get
+            {
+                return LibVlcMethods.libvlc_video_get_crop_geometry(m_hMediaPlayer);
+            }
+            set
+            {
+                LibVlcMethods.libvlc_video_set_crop_geometry(m_hMediaPlayer, value.ToUtf8());
+            }
+        }
+    }
 }

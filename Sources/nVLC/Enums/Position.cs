@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,29 +11,24 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace nVLC
+namespace nVLC.Enums
 {
-   /// <summary>
-   /// Position on the video screen
-   /// </summary>
-   public enum Position
-   {
-      Center = 0,
-      Left = 1,
-      Right = 2,
-      Top = 4,
-      Bottom = 8,
-      TopRight = Top | Right,
-      TopLeft = Top | Left,
-      BottomRight = Bottom | Right,
-      BottomLeft = Bottom | Left
-   }
+    /// <summary>
+    /// Position on the video screen
+    /// </summary>
+    public enum Position
+    {
+        Center = 0,
+        Left = 1,
+        Right = 2,
+        Top = 4,
+        Bottom = 8,
+        TopRight = Top | Right,
+        TopLeft = Top | Left,
+        BottomRight = Bottom | Right,
+        BottomLeft = Bottom | Left
+    }
 }

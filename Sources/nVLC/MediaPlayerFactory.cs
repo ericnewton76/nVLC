@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,28 +11,25 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
-using nVLC;
-using nVLC.Discovery;
-using nVLC.Media;
-using nVLC.MediaLibrary;
-using nVLC.Players;
-using nVLC.VLM;
+using Microsoft.Win32;
 using nVLC.Discovery;
 using nVLC.Exceptions;
+using nVLC.Internal;
 using nVLC.Loggers;
 using nVLC.Media;
 using nVLC.MediaLibrary;
+using nVLC.Natives;
 using nVLC.Players;
+using nVLC.Structures;
+using nVLC.Utils;
 using nVLC.VLM;
-using LibVlcWrapper;
-using Microsoft.Win32;
 
 namespace nVLC
 {
@@ -53,16 +50,16 @@ namespace nVLC
         /// <param name="frameInfo"></param>
         public MediaPlayerFactory(bool findLibvlc = false)
         {
-            string[] args = new string[] 
-             {
-                "-I", 
-                "dumy",  
-		        "--ignore-config", 
+            string[] args = new string[]
+            {
+                "-I",
+                "dumy",
+                "--ignore-config",
                 "--no-osd",
                 "--disable-screensaver",
                 "--ffmpeg-hw",
-		        "--plugin-path=./plugins" 
-             };
+                "--plugin-path=./plugins"
+            };
 
             Initialize(args, findLibvlc);
         }
@@ -72,7 +69,6 @@ namespace nVLC
         /// </summary>
         /// <param name="args">Collection of arguments passed to libVLC library</param>
         /// <param name="findLibvlc">True to find libvlc installation path, False to use libvlc in the executable path</param>
-        /// <param name="frameInfo"></param>
         public MediaPlayerFactory(string[] args, bool findLibvlc = false)
         {
             Initialize(args, findLibvlc);
@@ -80,7 +76,7 @@ namespace nVLC
 
         private void Initialize(string[] args, bool findLibvlc)
         {
-            AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
+            AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
             if (findLibvlc)
             {
                 TrySetVLCPath();
@@ -125,12 +121,15 @@ namespace nVLC
             }
             catch (EntryPointNotFoundException ex)
             {
+                // FIXME: temporary hack
+                #if !__MonoCS__
                 MinimalLibVlcVersion minVersion = (MinimalLibVlcVersion)Attribute.GetCustomAttribute(ex.TargetSite, typeof(MinimalLibVlcVersion));
                 if (minVersion != null)
                 {
                     string msg = string.Format("libVLC logging functinality enabled staring libVLC version {0} while you are using version {1}", minVersion.MinimalVersion, Version);
                     m_logger.Warning(msg);
                 }
+                #endif
             }
             catch (Exception ex)
             {
@@ -180,7 +179,7 @@ namespace nVLC
         /// Creates new instance of media list.
         /// </summary>
         /// <typeparam name="T">Type of media list</typeparam>
-        /// <param name="mediaItems">Collection of media inputs</param>       
+        /// <param name="mediaItems">Collection of media inputs</param>
         /// <param name="options"></param>
         /// <returns>Newly created media list</returns>
         public T CreateMediaList<T>(IEnumerable<string> mediaItems, params string[] options) where T : IMediaList
@@ -188,7 +187,7 @@ namespace nVLC
             T mediaList = ObjectFactory.Build<T>(m_hMediaLib);
             foreach (var file in mediaItems)
             {
-                mediaList.Add(this.CreateMedia<IMedia>(file, options));
+                mediaList.Add(CreateMedia<IMedia>(file, options));
             }
 
             return mediaList;
@@ -232,7 +231,7 @@ namespace nVLC
             {
                 IntPtr pStr = LibVlcMethods.libvlc_get_version();
                 return Marshal.PtrToStringAnsi(pStr);
-            }               
+            }
         }
 
         /// <summary>
@@ -241,6 +240,11 @@ namespace nVLC
         /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                m_log.Dispose();
+            }
+
             Release();
         }
 
@@ -263,7 +267,10 @@ namespace nVLC
                 objectMap.Add(typeof(IVideoLanManager), typeof(VideoLanManager));
                 objectMap.Add(typeof(IMediaDiscoverer), typeof(MediaDiscoverer));
                 objectMap.Add(typeof(IMediaLibrary), typeof(MediaLibraryImpl));
+
+                #if !LEGACY_N3
                 objectMap.Add(typeof(IMemoryInputMedia), typeof(MemoryInputMedia));
+                #endif
             }
 
             public static T Build<T>(params object[] args)
@@ -416,7 +423,7 @@ namespace nVLC
 
                 return m_vlm;
             }
-        } 
+        }
 
         /// <summary>
         /// Gets list of available audio output modules
@@ -477,7 +484,7 @@ namespace nVLC
         {
             try
             {
-                if (Environment.Is64BitProcess)
+                if (Compatibility.Is64BitProcess())
                 {
                     TrySet64BitPath();
                 }
@@ -512,10 +519,10 @@ namespace nVLC
                 {
                     using (RegistryKey sk = rk.OpenSubKey(skName))
                     {
-                        object DisplayName = sk.GetValue("DisplayName");
-                        if (DisplayName != null)
+                        object displayName = sk.GetValue("DisplayName");
+                        if (displayName != null)
                         {
-                            if (DisplayName.ToString().ToLower().IndexOf(vlcRegistryKey.ToLower()) > -1)
+                            if (displayName.ToString().ToLower().IndexOf(vlcRegistryKey.ToLower()) > -1)
                             {
                                 object vlcDir = sk.GetValue("InstallLocation");
 

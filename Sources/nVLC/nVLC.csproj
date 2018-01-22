@@ -68,14 +68,6 @@
     </Reference>
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml.Linq">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data.DataSetExtensions">
-      <RequiredTargetFramework>3.5</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Delegates.cs" />
@@ -178,6 +170,7 @@
     <Compile Include="Structures\Sound.cs" />
     <Compile Include="Structures\SoundFormat.cs" />
     <Compile Include="Structures\StreamInfo.cs" />
+    <Compile Include="Utils\Compatibility.cs" />
     <Compile Include="Utils\EnumUtils.cs" />
     <Compile Include="Utils\MemoryHeap.cs" />
     <Compile Include="Media\VideoInputMedia.cs" />
@@ -188,11 +181,11 @@
     <Compile Include="VLM\VLM.cs" />
     <Compile Include="VLM\VlmEvent.cs" />
     <Compile Include="VLM\VlmEventManager.cs" />
-    <Compile Include="_PInvoke\LibVlcEnums.cs" />
-    <Compile Include="_PInvoke\LibVlcMethods.cs" />
-    <Compile Include="_PInvoke\LibVlcStructs.cs" />
-    <Compile Include="_PInvoke\MaxLibVlcVersion.cs" />
-    <Compile Include="_PInvoke\MinimalLibVlcVersion.cs" />
+    <Compile Include="Natives\LibVlcEnums.cs" />
+    <Compile Include="Natives\LibVlcMethods.cs" />
+    <Compile Include="Natives\LibVlcStructs.cs" />
+    <Compile Include="Natives\MaxLibVlcVersion.cs" />
+    <Compile Include="Natives\MinimalLibVlcVersion.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

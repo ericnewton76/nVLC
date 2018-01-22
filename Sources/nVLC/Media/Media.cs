@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,17 +11,17 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
 using System.Text;
-using nVLC;
+using nVLC.Enums;
 using nVLC.Events;
-using nVLC.Media;
-using nVLC.Events;
-using LibVlcWrapper;
+using nVLC.Internal;
+using nVLC.Natives;
+using nVLC.Structures;
 
 namespace nVLC.Media
 {
@@ -245,7 +245,7 @@ namespace nVLC.Media
 
         public override bool Equals(object obj)
         {
-            return this.Equals((IMedia)obj, this);
+            return Equals((IMedia)obj, this);
         }
 
         public override int GetHashCode()

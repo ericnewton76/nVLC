@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,18 +11,17 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using nVLC.Players;
-using nVLC.Media;
-using nVLC.VLM;
 using nVLC.Discovery;
+using nVLC.Media;
 using nVLC.MediaLibrary;
+using nVLC.Players;
+using nVLC.Structures;
+using nVLC.VLM;
 
 namespace nVLC
 {
@@ -51,7 +50,7 @@ namespace nVLC
         /// Creates new instance of media list.
         /// </summary>
         /// <typeparam name="T">Type of media list</typeparam>
-        /// <param name="mediaItems">Collection of media inputs</param>       
+        /// <param name="mediaItems">Collection of media inputs</param>
         /// <param name="options">Options applied on every media instance of the list</param>
         /// <returns>Newly created media list</returns>
         T CreateMediaList<T>(IEnumerable<string> mediaItems, params string[] options) where T : IMediaList;

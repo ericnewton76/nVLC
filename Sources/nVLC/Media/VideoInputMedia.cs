@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -20,10 +20,9 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Threading;
-using nVLC;
-using nVLC.Media;
+using nVLC.Natives;
+using nVLC.Structures;
 using nVLC.Utils;
-using LibVlcWrapper;
 
 namespace nVLC.Media
 {
@@ -93,13 +92,13 @@ namespace nVLC.Media
         {
             List<string> options = new List<string>()
             {
-               ":codec=invmem",
-               string.Format(":invmem-width={0}", m_format.Width),
-               string.Format(":invmem-height={0}", m_format.Height),
-               string.Format(":invmem-lock={0}", m_pLock.ToInt64()),
-               string.Format(":invmem-unlock={0}", m_pUnlock.ToInt64()),
-               string.Format(":invmem-chroma={0}", m_format.Chroma),
-               string.Format(":invmem-data={0}", m_pData.AddrOfPinnedObject().ToInt64())
+                ":codec=invmem",
+                string.Format(":invmem-width={0}", m_format.Width),
+                string.Format(":invmem-height={0}", m_format.Height),
+                string.Format(":invmem-lock={0}", m_pLock.ToInt64()),
+                string.Format(":invmem-unlock={0}", m_pUnlock.ToInt64()),
+                string.Format(":invmem-chroma={0}", m_format.Chroma),
+                string.Format(":invmem-data={0}", m_pData.AddrOfPinnedObject().ToInt64())
             };
 
             AddOptions(options);

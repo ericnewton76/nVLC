@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,18 +11,19 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC;
 using nVLC.Enums;
-using LibVlcWrapper;
+using nVLC.Natives;
+using nVLC.Structures;
+using nVLC.Utils;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     internal unsafe sealed class AudioRenderer : DisposableBase, IAudioRenderer
     {
@@ -71,7 +72,7 @@ namespace nVLC
             m_callbacksDelegates.Add(flush);
             m_callbacksDelegates.Add(drain);
 
-            m_timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+            m_timer.Elapsed += timer_Elapsed;
             m_timer.Interval = 1000;
         }
 
@@ -93,7 +94,7 @@ namespace nVLC
         {
             if (callbacks.SoundCallback == null)
             {
-                throw new ArgumentNullException("Sound playback callback must be set");
+                throw new ArgumentNullException("callbacks");
             }
 
             m_callbacks = callbacks;
@@ -177,7 +178,7 @@ namespace nVLC
             string formatStr = Marshal.PtrToStringAnsi(pFormat);
 
             SoundType sType;
-            if (!Enum.TryParse<SoundType>(formatStr, out sType))
+            if (!EnumUtils.TryParse(formatStr, out sType))
             {
                 ArgumentException exc = new ArgumentException("Unsupported sound type " + formatStr);
                 if (m_excHandler != null)
@@ -201,7 +202,7 @@ namespace nVLC
             *rate = m_format.Rate;
             *channels = m_format.Channels;
 
-            return m_format.UseCustomAudioRendering == true ? 0 : 1;
+            return m_format.UseCustomAudioRendering ? 0 : 1;
         }
 
         protected override void Dispose(bool disposing)
@@ -211,11 +212,12 @@ namespace nVLC
 
             if (disposing)
             {
+                m_timer.Dispose();
                 m_formatSetupCB = null;
                 m_excHandler = null;
                 m_callbacks = null;
                 m_callbacksDelegates.Clear();
-            }          
+            }
         }
 
         public void SetExceptionHandler(Action<Exception> handler)

@@ -1,5 +1,4 @@
-﻿using System;
-using nVLC.Media;
+﻿using nVLC.Media;
 
 namespace nVLC.MediaLibrary
 {

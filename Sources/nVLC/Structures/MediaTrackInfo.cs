@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,37 +11,34 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using nVLC;
+using nVLC.Enums;
 
-namespace nVLC
+namespace nVLC.Structures
 {
-   /// <summary>
-   /// Data structure containing parameters of elementary media stream
-   /// </summary>
-   [Serializable]
-   public class MediaTrackInfo
-   {
-      public UInt32 Codec;
+    /// <summary>
+    /// Data structure containing parameters of elementary media stream
+    /// </summary>
+    [Serializable]
+    public class MediaTrackInfo
+    {
+        public UInt32 Codec;
 
-      public int Id;
+        public int Id;
 
-      public TrackType TrackType;
+        public TrackType TrackType;
 
-      public int Profile;
+        public int Profile;
 
-      public int Level;
+        public int Level;
 
-      public int Channels;
-      public int Rate;
+        public int Channels;
+        public int Rate;
 
-      public int Height;
-      public int Width;
-   }
+        public int Height;
+        public int Width;
+    }
 }

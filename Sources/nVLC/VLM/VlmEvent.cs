@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace nVLC.VLM
 {
     /// <summary>
-    /// Represents VLM events 
+    /// Represents VLM events
     /// </summary>
     [Serializable]
     public class VlmEvent : EventArgs

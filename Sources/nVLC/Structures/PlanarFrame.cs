@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,15 +11,12 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Structure for pixel planes and their sizes
@@ -39,12 +36,12 @@ namespace nVLC
                 throw new ArgumentException("Number of planes must be equal to lenghts array");
             }
 
-            this.Planes = planes;
-            this.Lenghts = lenghts;
+            Planes = planes;
+            Lenghts = lenghts;
         }
 
         /// <summary>
-        /// Gets pointer array to the pixel planes on the native heap 
+        /// Gets pointer array to the pixel planes on the native heap
         /// </summary>
         public IntPtr[] Planes { get; set; }
 

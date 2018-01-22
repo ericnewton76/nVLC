@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,16 +11,14 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing.Imaging;
+using nVLC.Enums;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     /// <summary>
     /// Specifies the parameters of the bitmap.
@@ -49,8 +47,8 @@ namespace nVLC
             {
                 Pitch = Width * BitsPerPixel / 8;
                 PlaneSizes[0] = ImageSize = Pitch * Height;
-                Pitches = new int[1] { Pitch };
-                Lines = new int[1] { Height };
+                Pitches = new int[] { Pitch };
+                Lines = new int[] { Height };
             }
         }
 
@@ -88,8 +86,8 @@ namespace nVLC
                     Planes = 2;
                     PlaneSizes[0] = Width * Height;
                     PlaneSizes[1] = Width * Height / 2;
-                    Pitches = new int[2] { Width, Width};
-                    Lines = new int[2] { Height, Height / 2};
+                    Pitches = new int[] { Width, Width};
+                    Lines = new int[] { Height, Height / 2};
                     ImageSize = PlaneSizes[0] + PlaneSizes[1];
                     break;
 
@@ -109,8 +107,8 @@ namespace nVLC
                 case ChromaType.UYVY:
                     BitsPerPixel = 16;
                     PlaneSizes[0] = Width * Height * 2;
-                    Pitches = new int[1] { Width * 2};
-                    Lines = new int[1] { Height };
+                    Pitches = new int[] { Width * 2};
+                    Lines = new int[] { Height };
                     ImageSize = PlaneSizes[0];
                     break;
 
@@ -120,7 +118,7 @@ namespace nVLC
         }
 
         /// <summary>
-        /// Gets the size in bytes of the scan line 
+        /// Gets the size in bytes of the scan line
         /// </summary>
         public int Pitch { get; private set; }
 
@@ -138,7 +136,7 @@ namespace nVLC
         /// Gets the pixel format of the bitmap. Valid only for RGB formats.
         /// </summary>
         public PixelFormat PixelFormat { get; private set; }
-       
+
         /// <summary>
         /// Gets the width of the bitmap
         /// </summary>
@@ -162,9 +160,9 @@ namespace nVLC
             get
             {
                 return ChromaType == ChromaType.I420 ||
-                       ChromaType == ChromaType.NV12 ||
-                       ChromaType == ChromaType.YV12 ||
-                       ChromaType == ChromaType.J420;
+                    ChromaType == ChromaType.NV12 ||
+                    ChromaType == ChromaType.YV12 ||
+                    ChromaType == ChromaType.J420;
             }
         }
 
@@ -176,10 +174,10 @@ namespace nVLC
             get
             {
                 return ChromaType == ChromaType.RV15 ||
-                       ChromaType == ChromaType.RV16 ||
-                       ChromaType == ChromaType.RV24 ||
-                       ChromaType == ChromaType.RV32 ||
-                       ChromaType == ChromaType.RGBA;
+                    ChromaType == ChromaType.RV16 ||
+                    ChromaType == ChromaType.RV24 ||
+                    ChromaType == ChromaType.RV32 ||
+                    ChromaType == ChromaType.RGBA;
             }
         }
 

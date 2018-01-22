@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("nVLC_Demo_WinForms")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HOME")]
-[assembly: AssemblyProduct("nVLC_Demo_WinForms")]
-[assembly: AssemblyCopyright("Copyright © HOME 2010")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("nVLC")]
+[assembly: AssemblyCopyright("Copyright © Roman Ginzburg 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

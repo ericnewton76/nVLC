@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,14 +11,13 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using nVLC.Utils;
-using System.Runtime.InteropServices;
 
-namespace nVLC
+namespace nVLC.Structures
 {
     internal unsafe struct PixelData : IDisposable
     {
@@ -28,14 +27,14 @@ namespace nVLC
         public PixelData(int size)
         {
             this.size = size;
-            this.pPixelData = (byte*)MemoryHeap.Alloc(size);
+            pPixelData = (byte*)MemoryHeap.Alloc(size);
         }
 
         #region IDisposable Members
 
         public void Dispose()
         {
-            MemoryHeap.Free(this.pPixelData);
+            MemoryHeap.Free(pPixelData);
         }
 
         #endregion

@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,16 +11,14 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using nVLC;
 using nVLC.Events;
+using nVLC.Internal;
 using nVLC.Media;
-using nVLC.Players;
-using LibVlcWrapper;
-using nVLC.Events;
+using nVLC.Natives;
 
 namespace nVLC.Players
 {
@@ -113,6 +111,11 @@ namespace nVLC.Players
 
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                m_events.Dispose();
+            }
+
             Release();
         }
 
@@ -180,7 +183,7 @@ namespace nVLC.Players
 
         public override bool Equals(object obj)
         {
-            return this.Equals((IPlayer)obj, this);
+            return Equals((IPlayer)obj, this);
         }
 
         public override int GetHashCode()

@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,18 +11,19 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC;
+using nVLC.Enums;
+using nVLC.Natives;
+using nVLC.Structures;
 using nVLC.Utils;
-using LibVlcWrapper;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     internal sealed unsafe class MemoryRendererEx : DisposableBase, IMemoryRendererEx
     {
@@ -40,7 +41,7 @@ namespace nVLC
         IntPtr pLockCallback;
         IntPtr pDisplayCallback;
         IntPtr pFormatCallback;
-        
+
         PlanarPixelData m_pixelData = default(PlanarPixelData);
 
         public MemoryRendererEx(IntPtr hMediaPlayer)
@@ -50,7 +51,7 @@ namespace nVLC
             LockEventHandler leh = OnpLock;
             DisplayEventHandler deh = OnpDisplay;
             VideoFormatCallback formatCallback = OnFormatCallback;
-            
+
             pFormatCallback = Marshal.GetFunctionPointerForDelegate(formatCallback);
             pLockCallback = Marshal.GetFunctionPointerForDelegate(leh);
             pDisplayCallback = Marshal.GetFunctionPointerForDelegate(deh);
@@ -58,11 +59,11 @@ namespace nVLC
             m_callbacks.Add(leh);
             m_callbacks.Add(deh);
             m_callbacks.Add(formatCallback);
-           
-            m_timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+
+            m_timer.Elapsed += timer_Elapsed;
             m_timer.Interval = 1000;
 
-            LibVlcMethods.libvlc_video_set_format_callbacks(m_hMediaPlayer, pFormatCallback, IntPtr.Zero);        
+            LibVlcMethods.libvlc_video_set_format_callbacks(m_hMediaPlayer, pFormatCallback, IntPtr.Zero);
             LibVlcMethods.libvlc_video_set_callbacks(m_hMediaPlayer, pLockCallback, IntPtr.Zero, pDisplayCallback, IntPtr.Zero);
         }
 
@@ -72,7 +73,7 @@ namespace nVLC
             string chromaStr = Marshal.PtrToStringAnsi(pChroma);
 
             ChromaType type;
-            if (!Enum.TryParse<ChromaType>(chromaStr, out type))
+            if (!EnumUtils.TryParse(chromaStr, out type))
             {
                 ArgumentException exc = new ArgumentException("Unsupported chroma type " + chromaStr);
                 if (m_excHandler != null)
@@ -149,7 +150,7 @@ namespace nVLC
                     }
                     else
                     {
-                        throw ex;
+                        throw;
                     }
                 }
             }
@@ -220,7 +221,7 @@ namespace nVLC
                 m_excHandler = null;
                 m_callback = null;
                 m_callbacks.Clear();
-            }         
+            }
         }
     }
 }

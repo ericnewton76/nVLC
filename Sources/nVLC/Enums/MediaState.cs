@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,28 +11,23 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace nVLC
+namespace nVLC.Enums
 {
-   /// <summary>
-   /// Possible state of the media objects
-   /// </summary>
-   public enum MediaState
-   {
-      NothingSpecial = 0,
-      Opening,
-      Buffering,
-      Playing,
-      Paused,
-      Stopped,
-      Ended,
-      Error
-   }
+    /// <summary>
+    /// Possible state of the media objects
+    /// </summary>
+    public enum MediaState
+    {
+        NothingSpecial = 0,
+        Opening,
+        Buffering,
+        Playing,
+        Paused,
+        Stopped,
+        Ended,
+        Error
+    }
 }

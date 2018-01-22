@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,14 +11,12 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Drawing;
+using nVLC.Structures;
 
 namespace nVLC.Media
 {
@@ -31,7 +29,7 @@ namespace nVLC.Media
         /// Initializes instance of the media object with stream information and frames' queue size
         /// </summary>
         /// <param name="streamInfo"></param>
-        /// <param name="maxFramesInQueue">Maximum items in the queue. If the queue is full any AddFrame overload 
+        /// <param name="maxFramesInQueue">Maximum items in the queue. If the queue is full any AddFrame overload
         /// will block until queue slot becomes available</param>
         void Initialize(StreamInfo streamInfo, int maxItemsInQueue = 30);
 
@@ -68,7 +66,7 @@ namespace nVLC.Media
         void SetExceptionHandler(Action<Exception> handler);
 
         /// <summary>
-        /// Gets number of pending frames in queue 
+        /// Gets number of pending frames in queue
         /// </summary>
         int PendingFramesCount { get; }
     }

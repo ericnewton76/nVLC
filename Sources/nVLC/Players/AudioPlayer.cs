@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,15 +11,15 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using nVLC;
-using nVLC.Players;
-using LibVlcWrapper;
 using nVLC.Enums;
 using nVLC.Exceptions;
+using nVLC.Natives;
+using nVLC.Rendering;
+using nVLC.Structures;
 
 namespace nVLC.Players
 {
@@ -90,13 +90,13 @@ namespace nVLC.Players
 
         public IAudioRenderer CustomAudioRenderer
         {
-            get 
+            get
             {
                 if (m_render == null)
                 {
                     m_render = new AudioRenderer(m_hMediaPlayer);
                 }
-                return m_render; 
+                return m_render;
             }
         }
 

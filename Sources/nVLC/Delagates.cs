@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,12 +11,12 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Runtime.InteropServices;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC
 {
@@ -60,7 +60,7 @@ namespace nVLC
     unsafe delegate int ImemGet(void* data, char* cookie, long* dts, long* pts, int* flags, uint* dataSize, void** ppData);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    unsafe delegate void ImemRelease(void* data, char* cookie, uint dataSize, void* pData); 
+    unsafe delegate void ImemRelease(void* data, char* cookie, uint dataSize, void* pData);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     unsafe delegate void LogCallback(void* data, libvlc_log_level level, char* fmt, char* args);

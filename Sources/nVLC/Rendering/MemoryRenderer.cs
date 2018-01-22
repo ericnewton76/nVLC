@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,7 +11,7 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
@@ -19,11 +19,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Timers;
-using nVLC;
+using nVLC.Natives;
+using nVLC.Structures;
 using nVLC.Utils;
-using LibVlcWrapper;
 
-namespace nVLC
+namespace nVLC.Rendering
 {
     internal sealed unsafe class MemoryRenderer : DisposableBase, IMemoryRenderer
     {
@@ -60,7 +60,7 @@ namespace nVLC
             m_callbacks.Add(deh);
             m_callbacks.Add(ueh);
 
-            m_timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+            m_timer.Elapsed += timer_Elapsed;
             m_timer.Interval = 1000;
         }
 
@@ -108,7 +108,7 @@ namespace nVLC
                     }
                     else
                     {
-                        throw ex;
+                        throw;
                     }
                 }
             }

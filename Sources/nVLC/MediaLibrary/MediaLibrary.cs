@@ -1,9 +1,7 @@
 ﻿using System;
-using nVLC;
+using nVLC.Internal;
 using nVLC.Media;
-using nVLC.MediaLibrary;
-using nVLC.Media;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.MediaLibrary
 {
@@ -46,7 +44,7 @@ namespace nVLC.MediaLibrary
 
         public IntPtr Pointer
         {
-            get 
+            get
             {
                 return m_hMediaLib;
             }

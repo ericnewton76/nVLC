@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,17 +11,14 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using nVLC;
-using nVLC.Discovery;
 using nVLC.Events;
+using nVLC.Internal;
 using nVLC.Media;
-using nVLC.Events;
-using nVLC.Media;
-using LibVlcWrapper;
+using nVLC.Natives;
 
 namespace nVLC.Discovery
 {
@@ -66,7 +63,7 @@ namespace nVLC.Discovery
 
         public IntPtr EventManagerHandle
         {
-            get 
+            get
             {
                 return LibVlcMethods.libvlc_media_discoverer_event_manager(m_hDiscovery);
             }
@@ -74,7 +71,7 @@ namespace nVLC.Discovery
 
         public IntPtr Pointer
         {
-            get 
+            get
             {
                 return m_hDiscovery;
             }

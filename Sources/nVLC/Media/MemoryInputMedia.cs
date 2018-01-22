@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,23 +11,24 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
-using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using nVLC;
-using nVLC.Media;
-using nVLC.Media;
-using nVLC.Utils;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.Linq;
+using System.Runtime.InteropServices;
+using nVLC.Structures;
+using nVLC.Utils;
 
-namespace nVLC
+namespace nVLC.Media
 {
+    // TODO: remove this temporary hack!
+    #if !LEGACY_N3
+    using System.Collections.Concurrent;
+    
     internal sealed unsafe class MemoryInputMedia : BasicMedia, IMemoryInputMedia
     {
         IntPtr m_pLock, m_pUnlock;
@@ -39,7 +40,7 @@ namespace nVLC
         
         public MemoryInputMedia(IntPtr hMediaLib)
             : base(hMediaLib)
-        {           
+        {
             ImemGet pLock = OnImemGet;
             ImemRelease pUnlock = OnImemRelease;
 
@@ -192,7 +193,7 @@ namespace nVLC
                     throw new Exception("imem-get callback failed", ex);
                 }
                 return 1;
-            }           
+            }
         }
 
         private void OnImemRelease(void* data, char* cookie, uint dataSize, void* pData)
@@ -248,7 +249,7 @@ namespace nVLC
                         MemoryHeap.Free(item.Data.ToPointer());
                     }
                 }
-                m_queue = null;
+                m_queue.Dispose();
             }
         }
 
@@ -259,10 +260,12 @@ namespace nVLC
 
         public int PendingFramesCount
         {
-            get 
+            get
             {
                 return m_queue.Count;
             }
         }
     }
+
+    #endif
 }

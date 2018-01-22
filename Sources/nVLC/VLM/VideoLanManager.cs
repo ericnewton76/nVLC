@@ -1,13 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using LibVlcWrapper;
+using nVLC.Events;
 using nVLC.Exceptions;
-using nVLC.Events;
-using nVLC.Events;
-using System.Runtime.InteropServices;
-using nVLC.VLM;
+using nVLC.Natives;
 
 namespace nVLC.VLM
 {
@@ -42,6 +38,11 @@ namespace nVLC.VLM
 
         protected override void Dispose(bool disposing)
         {
+            if (disposing)
+            {
+                m_Eventbroker.Dispose();
+            }
+
             try
             {
                 LibVlcMethods.libvlc_vlm_release(m_hMediaLib);
@@ -61,7 +62,7 @@ namespace nVLC.VLM
                 optionsArray = options.ToArray();
             }
 
-            if (LibVlcMethods.libvlc_vlm_add_broadcast(m_hMediaLib, name.ToUtf8(), input.ToUtf8(), output.ToUtf8(), optionsNumber, optionsArray, bEnabled == true ? 1 : 0, bLoop == true ? 1 : 0) != 0)
+            if (LibVlcMethods.libvlc_vlm_add_broadcast(m_hMediaLib, name.ToUtf8(), input.ToUtf8(), output.ToUtf8(), optionsNumber, optionsArray, bEnabled ? 1 : 0, bLoop ? 1 : 0) != 0)
             {
                 throw new LibVlcException();
             }
@@ -78,7 +79,7 @@ namespace nVLC.VLM
                 optionsArray = options.ToArray();
             }
 
-            if (LibVlcMethods.libvlc_vlm_add_vod(m_hMediaLib, name.ToUtf8(), input.ToUtf8(), optionsNumber, optionsArray, bEnabled == true ? 1 : 0, mux.ToUtf8()) != 0)
+            if (LibVlcMethods.libvlc_vlm_add_vod(m_hMediaLib, name.ToUtf8(), input.ToUtf8(), optionsNumber, optionsArray, bEnabled ? 1 : 0, mux.ToUtf8()) != 0)
             {
                 throw new LibVlcException();
             }
@@ -94,7 +95,7 @@ namespace nVLC.VLM
 
         public void SetEnabled(string name, bool bEnabled)
         {
-            if (LibVlcMethods.libvlc_vlm_set_enabled(m_hMediaLib, name.ToUtf8(), bEnabled == true ? 1 : 0) != 0)
+            if (LibVlcMethods.libvlc_vlm_set_enabled(m_hMediaLib, name.ToUtf8(), bEnabled ? 1 : 0) != 0)
             {
                 throw new LibVlcException();
             }
@@ -126,7 +127,7 @@ namespace nVLC.VLM
 
         public void SetLoop(string name, bool bLoop)
         {
-            if (LibVlcMethods.libvlc_vlm_set_loop(m_hMediaLib, name.ToUtf8(), bLoop == true ? 1 : 0) != 0)
+            if (LibVlcMethods.libvlc_vlm_set_loop(m_hMediaLib, name.ToUtf8(), bLoop ? 1 : 0) != 0)
             {
                 throw new LibVlcException();
             }
@@ -151,7 +152,7 @@ namespace nVLC.VLM
                 optionsArray = options.ToArray();
             }
 
-            if (LibVlcMethods.libvlc_vlm_change_media(m_hMediaLib, name.ToUtf8(), input.ToUtf8(), output.ToUtf8(), optionsNumber, optionsArray, bEnabled == true ? 1 : 0, bLoop == true ? 1 : 0) != 0)
+            if (LibVlcMethods.libvlc_vlm_change_media(m_hMediaLib, name.ToUtf8(), input.ToUtf8(), output.ToUtf8(), optionsNumber, optionsArray, bEnabled ? 1 : 0, bLoop ? 1 : 0) != 0)
             {
                 throw new LibVlcException();
             }

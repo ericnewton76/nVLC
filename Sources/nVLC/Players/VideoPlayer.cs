@@ -1,5 +1,5 @@
 ﻿//    nVLC
-//    
+//
 //    Author:  Roman Ginzburg
 //
 //    nVLC is free software: you can redistribute it and/or modify
@@ -11,18 +11,17 @@
 //    but WITHOUT ANY WARRANTY; without even the implied warranty of
 //    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 //    GNU General Public License for more details.
-//     
+//
 // ========================================================================
 
 using System;
 using System.Collections.Generic;
 using System.Drawing;
-using nVLC;
+using nVLC.Enums;
 using nVLC.Filters;
-using nVLC.Players;
-using nVLC.Filters;
+using nVLC.Natives;
+using nVLC.Rendering;
 using nVLC.Utils;
-using LibVlcWrapper;
 
 namespace nVLC.Players
 {
@@ -66,11 +65,19 @@ namespace nVLC.Players
         {
             get
             {
+                #if !__MonoCS__
                 return LibVlcMethods.libvlc_media_player_get_hwnd(m_hMediaPlayer);
+                #else
+                return LibVlcMethods.libvlc_media_player_get_xwindow(m_hMediaPlayer);
+                #endif
             }
             set
             {
+                #if !__MonoCS__
                 LibVlcMethods.libvlc_media_player_set_hwnd(m_hMediaPlayer, value);
+                #else
+                LibVlcMethods.libvlc_media_player_set_xwindow(m_hMediaPlayer, value);
+                #endif
             }
         }
 
