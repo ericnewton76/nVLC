@@ -71,7 +71,15 @@ namespace Implementation.Media
             {
                 m_path = value;
                 byte[] bytes = Encoding.UTF8.GetBytes(m_path);
-                m_hMedia = LibVlcMethods.libvlc_media_new_path(m_hMediaLib, bytes);
+                if(m_path.StartsWith("rtsp://") || m_path.StartsWith("http://") || m_path.StartsWith("https://"))
+                {
+                    m_hMedia = LibVlcMethods.libvlc_media_new_location(m_hMediaLib, bytes);
+                }
+                else
+                {
+                    m_hMedia = LibVlcMethods.libvlc_media_new_path(m_hMediaLib, bytes);
+                }
+                
             }
         }
 
